@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <annotationProcessing>
+      <profile name="Maven default annotation processors profile" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <module name="Atoi" />
+        <module name="GenerateParentheses" />
+        <module name="MaximumSubarray (1)" />
+        <module name="MedianOfArrays" />
+        <module name="MaximumSubarray (2)" />
+        <module name="MaximumSubarray" />
+        <module name="CombinationSum" />
+      </profile>
+    </annotationProcessing>
+  </component>
+</project>
