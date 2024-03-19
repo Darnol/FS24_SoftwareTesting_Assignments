@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report-3.0.xsd" version="3.0" name="zest.MedianOfArraysTest" time="0.185" tests="8" errors="0" skipped="0" failures="0">
+<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report-3.0.xsd" version="3.0" name="zest.MedianOfArraysTest" time="0.188" tests="8" errors="0" skipped="0" failures="0">
   <properties>
     <property name="java.specification.version" value="21"/>
     <property name="sun.cpu.isalist" value="amd64"/>
     <property name="sun.jnu.encoding" value="UTF-8"/>
-    <property name="java.class.path" value="C:\Users\nilsb\Desktop\uni\FS24_SoftwareTesting_Assignments\assignment01\median_of_arrays\target\test-classes;C:\Users\nilsb\Desktop\uni\FS24_SoftwareTesting_Assignments\assignment01\median_of_arrays\target\classes;C:\Users\nilsb\.m2\repository\org\junit\jupiter\junit-jupiter-engine\5.9.1\junit-jupiter-engine-5.9.1.jar;C:\Users\nilsb\.m2\repository\org\junit\platform\junit-platform-engine\1.9.1\junit-platform-engine-1.9.1.jar;C:\Users\nilsb\.m2\repository\org\opentest4j\opentest4j\1.2.0\opentest4j-1.2.0.jar;C:\Users\nilsb\.m2\repository\org\junit\platform\junit-platform-commons\1.9.1\junit-platform-commons-1.9.1.jar;C:\Users\nilsb\.m2\repository\org\junit\jupiter\junit-jupiter-api\5.9.1\junit-jupiter-api-5.9.1.jar;C:\Users\nilsb\.m2\repository\org\apiguardian\apiguardian-api\1.1.2\apiguardian-api-1.1.2.jar;"/>
+    <property name="java.class.path" value="C:\Users\nilsb\Desktop\uni\dev\FS24_SoftwareTesting_Assignments\assignment01\median_of_arrays\target\test-classes;C:\Users\nilsb\Desktop\uni\dev\FS24_SoftwareTesting_Assignments\assignment01\median_of_arrays\target\classes;C:\Users\nilsb\.m2\repository\org\junit\jupiter\junit-jupiter-engine\5.9.1\junit-jupiter-engine-5.9.1.jar;C:\Users\nilsb\.m2\repository\org\junit\platform\junit-platform-engine\1.9.1\junit-platform-engine-1.9.1.jar;C:\Users\nilsb\.m2\repository\org\opentest4j\opentest4j\1.2.0\opentest4j-1.2.0.jar;C:\Users\nilsb\.m2\repository\org\junit\platform\junit-platform-commons\1.9.1\junit-platform-commons-1.9.1.jar;C:\Users\nilsb\.m2\repository\org\junit\jupiter\junit-jupiter-api\5.9.1\junit-jupiter-api-5.9.1.jar;C:\Users\nilsb\.m2\repository\org\apiguardian\apiguardian-api\1.1.2\apiguardian-api-1.1.2.jar;"/>
     <property name="java.vm.vendor" value="Oracle Corporation"/>
     <property name="sun.arch.data.model" value="64"/>
     <property name="user.variant" value=""/>
@@ -16,9 +16,9 @@
     <property name="sun.java.launcher" value="SUN_STANDARD"/>
     <property name="user.country" value="GB"/>
     <property name="sun.boot.library.path" value="C:\Program Files\Java\jdk-21\bin"/>
-    <property name="sun.java.command" value="C:\Users\nilsb\AppData\Local\Temp\surefire11036551722998951103\surefirebooter5471358173620343393.jar C:\Users\nilsb\AppData\Local\Temp\surefire11036551722998951103 2024-03-09T10-30-18_908-jvmRun1 surefire8911561506307263925tmp surefire_012231120184401717423tmp"/>
+    <property name="sun.java.command" value="C:\Users\nilsb\AppData\Local\Temp\surefire5611264268543505853\surefirebooter14464426188730557388.jar C:\Users\nilsb\AppData\Local\Temp\surefire5611264268543505853 2024-03-19T18-46-56_384-jvmRun1 surefire5037465946880212601tmp surefire_017243657964730347056tmp"/>
     <property name="jdk.debug" value="release"/>
-    <property name="surefire.test.class.path" value="C:\Users\nilsb\Desktop\uni\FS24_SoftwareTesting_Assignments\assignment01\median_of_arrays\target\test-classes;C:\Users\nilsb\Desktop\uni\FS24_SoftwareTesting_Assignments\assignment01\median_of_arrays\target\classes;C:\Users\nilsb\.m2\repository\org\junit\jupiter\junit-jupiter-engine\5.9.1\junit-jupiter-engine-5.9.1.jar;C:\Users\nilsb\.m2\repository\org\junit\platform\junit-platform-engine\1.9.1\junit-platform-engine-1.9.1.jar;C:\Users\nilsb\.m2\repository\org\opentest4j\opentest4j\1.2.0\opentest4j-1.2.0.jar;C:\Users\nilsb\.m2\repository\org\junit\platform\junit-platform-commons\1.9.1\junit-platform-commons-1.9.1.jar;C:\Users\nilsb\.m2\repository\org\junit\jupiter\junit-jupiter-api\5.9.1\junit-jupiter-api-5.9.1.jar;C:\Users\nilsb\.m2\repository\org\apiguardian\apiguardian-api\1.1.2\apiguardian-api-1.1.2.jar;"/>
+    <property name="surefire.test.class.path" value="C:\Users\nilsb\Desktop\uni\dev\FS24_SoftwareTesting_Assignments\assignment01\median_of_arrays\target\test-classes;C:\Users\nilsb\Desktop\uni\dev\FS24_SoftwareTesting_Assignments\assignment01\median_of_arrays\target\classes;C:\Users\nilsb\.m2\repository\org\junit\jupiter\junit-jupiter-engine\5.9.1\junit-jupiter-engine-5.9.1.jar;C:\Users\nilsb\.m2\repository\org\junit\platform\junit-platform-engine\1.9.1\junit-platform-engine-1.9.1.jar;C:\Users\nilsb\.m2\repository\org\opentest4j\opentest4j\1.2.0\opentest4j-1.2.0.jar;C:\Users\nilsb\.m2\repository\org\junit\platform\junit-platform-commons\1.9.1\junit-platform-commons-1.9.1.jar;C:\Users\nilsb\.m2\repository\org\junit\jupiter\junit-jupiter-api\5.9.1\junit-jupiter-api-5.9.1.jar;C:\Users\nilsb\.m2\repository\org\apiguardian\apiguardian-api\1.1.2\apiguardian-api-1.1.2.jar;"/>
     <property name="sun.cpu.endian" value="little"/>
     <property name="user.home" value="C:\Users\nilsb"/>
     <property name="user.language" value="en"/>
@@ -26,12 +26,12 @@
     <property name="java.version.date" value="2024-01-16"/>
     <property name="java.home" value="C:\Program Files\Java\jdk-21"/>
     <property name="file.separator" value="\"/>
-    <property name="basedir" value="C:\Users\nilsb\Desktop\uni\FS24_SoftwareTesting_Assignments\assignment01\median_of_arrays"/>
+    <property name="basedir" value="C:\Users\nilsb\Desktop\uni\dev\FS24_SoftwareTesting_Assignments\assignment01\median_of_arrays"/>
     <property name="java.vm.compressedOopsMode" value="32-bit"/>
     <property name="line.separator" value="&#10;"/>
     <property name="java.vm.specification.vendor" value="Oracle Corporation"/>
     <property name="java.specification.name" value="Java Platform API Specification"/>
-    <property name="surefire.real.class.path" value="C:\Users\nilsb\AppData\Local\Temp\surefire11036551722998951103\surefirebooter5471358173620343393.jar"/>
+    <property name="surefire.real.class.path" value="C:\Users\nilsb\AppData\Local\Temp\surefire5611264268543505853\surefirebooter14464426188730557388.jar"/>
     <property name="user.script" value=""/>
     <property name="sun.management.compiler" value="HotSpot 64-Bit Tiered Compilers"/>
     <property name="java.runtime.version" value="21.0.2+13-LTS-58"/>
@@ -46,7 +46,7 @@
     <property name="java.vendor.url.bug" value="https://bugreport.java.com/bugreport/"/>
     <property name="java.io.tmpdir" value="C:\Users\nilsb\AppData\Local\Temp\"/>
     <property name="java.version" value="21.0.2"/>
-    <property name="user.dir" value="C:\Users\nilsb\Desktop\uni\FS24_SoftwareTesting_Assignments\assignment01\median_of_arrays"/>
+    <property name="user.dir" value="C:\Users\nilsb\Desktop\uni\dev\FS24_SoftwareTesting_Assignments\assignment01\median_of_arrays"/>
     <property name="os.arch" value="amd64"/>
     <property name="java.vm.specification.name" value="Java Virtual Machine Specification"/>
     <property name="user.language.format" value="de"/>
@@ -60,12 +60,12 @@
     <property name="sun.io.unicode.encoding" value="UnicodeLittle"/>
     <property name="java.class.version" value="65.0"/>
   </properties>
-  <testcase name="testFindMedianSortedArraysAllSameNumber" classname="zest.MedianOfArraysTest" time="0.105"/>
-  <testcase name="testFindMedianSortedArrays" classname="zest.MedianOfArraysTest" time="0.002"/>
+  <testcase name="testFindMedianSortedArraysAllSameNumber" classname="zest.MedianOfArraysTest" time="0.111"/>
+  <testcase name="testFindMedianSortedArrays" classname="zest.MedianOfArraysTest" time="0.003"/>
   <testcase name="testFindMedianSortedBothArraysEmpty" classname="zest.MedianOfArraysTest" time="0.002"/>
-  <testcase name="testFindMedianSortedArraysOneArrayBigger" classname="zest.MedianOfArraysTest" time="0.003"/>
-  <testcase name="testFindMedianSortedArraysNegative" classname="zest.MedianOfArraysTest" time="0.001"/>
-  <testcase name="testFindMedianSortedArraysNotSorted" classname="zest.MedianOfArraysTest" time="0.003"/>
-  <testcase name="testFindMedianSortedArraysNull" classname="zest.MedianOfArraysTest" time="0"/>
-  <testcase name="testFindMedianSortedArraysOneEmpty" classname="zest.MedianOfArraysTest" time="0"/>
+  <testcase name="testFindMedianSortedArraysOneArrayBigger" classname="zest.MedianOfArraysTest" time="0.001"/>
+  <testcase name="testFindMedianSortedArraysNegative" classname="zest.MedianOfArraysTest" time="0.003"/>
+  <testcase name="testFindMedianSortedArraysNotSorted" classname="zest.MedianOfArraysTest" time="0.001"/>
+  <testcase name="testFindMedianSortedArraysNull" classname="zest.MedianOfArraysTest" time="0.003"/>
+  <testcase name="testFindMedianSortedArraysOneEmpty" classname="zest.MedianOfArraysTest" time="0.001"/>
 </testsuite>

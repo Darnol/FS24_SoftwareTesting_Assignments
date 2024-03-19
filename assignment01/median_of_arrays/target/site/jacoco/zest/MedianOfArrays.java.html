@@ -8,10 +8,10 @@
 <span class="fc bfc" id="L8" title="All 2 branches covered.">            return nums1[p1] &lt; nums2[p2] ? nums1[p1++] : nums2[p2++];</span>
 <span class="fc bfc" id="L9" title="All 2 branches covered.">        } else if (p1 &lt; nums1.length) {</span>
 <span class="fc" id="L10">            return nums1[p1++];</span>
-<span class="pc bpc" id="L11" title="1 of 2 branches missed.">        } else if (p2 &lt; nums2.length) {</span>
+<span class="fc bfc" id="L11" title="All 2 branches covered.">        } else if (p2 &lt; nums2.length) {</span>
 <span class="fc" id="L12">            return nums2[p2++];</span>
         }
-<span class="nc" id="L14">        return -1;</span>
+<span class="fc" id="L14">        return -1;</span>
     }
 
     public boolean isArraySortedAscending(int[] array) {
@@ -29,7 +29,7 @@
 <span class="fc" id="L29">        p1 = 0; p2 = 0;</span>
         
 <span class="fc bfc" id="L31" title="All 4 branches covered.">        if (nums1 == null || nums2 == null) return 0;</span>
-<span class="fc bfc" id="L32" title="All 4 branches covered.">        if (nums1.length == 0 &amp;&amp; nums2.length == 0) return 0;</span>
+        //if (nums1.length == 0 &amp;&amp; nums2.length == 0) return 0;
 <span class="fc bfc" id="L33" title="All 4 branches covered.">        if (!isArraySortedAscending(nums1) || !isArraySortedAscending(nums2)) return 0;</span>
 <span class="fc" id="L34">        int m = nums1.length, n = nums2.length;</span>
 <span class="fc bfc" id="L35" title="All 2 branches covered.">        if ((m + n) % 2 == 0) {</span>

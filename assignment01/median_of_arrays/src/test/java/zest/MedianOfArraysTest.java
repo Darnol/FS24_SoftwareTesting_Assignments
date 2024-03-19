@@ -49,7 +49,7 @@ class MedianOfArraysTest {
         MedianOfArrays medianOfArrays = new MedianOfArrays();
         int[] nums1 = {};
         int[] nums2 = {};
-        assertEquals(0, medianOfArrays.findMedianSortedArrays(nums1, nums2));
+        assertEquals(-1, medianOfArrays.findMedianSortedArrays(nums1, nums2));
     }
 
     @Test

@@ -29,7 +29,6 @@ class MedianOfArrays {
         p1 = 0; p2 = 0;
         
         if (nums1 == null || nums2 == null) return 0;
-        if (nums1.length == 0 && nums2.length == 0) return 0;
         if (!isArraySortedAscending(nums1) || !isArraySortedAscending(nums2)) return 0;
         int m = nums1.length, n = nums2.length;
         if ((m + n) % 2 == 0) {
