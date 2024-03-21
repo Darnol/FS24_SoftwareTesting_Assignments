@@ -56,17 +56,21 @@ class Frac2DecTest {
   @Test
   public void T2_test_both_positive() {
     assertEquals(Frac2Dec.fractionToDecimal(2,5), "0.4");
+    assertEquals(Frac2Dec.fractionToDecimal(1,1), "1");
   }
 
   @Test
   public void T3_test_both_negative() {
     assertEquals(Frac2Dec.fractionToDecimal(-2,-5), "0.4");
+    assertEquals(Frac2Dec.fractionToDecimal(-1,-1), "1");
   }
 
   @Test
   public void T4_test_different_signs() {
     assertEquals(Frac2Dec.fractionToDecimal(2,-5), "-0.4");
     assertEquals(Frac2Dec.fractionToDecimal(-2,5), "-0.4");
+    assertEquals(Frac2Dec.fractionToDecimal(1,-1), "-1");
+    assertEquals(Frac2Dec.fractionToDecimal(-1,1), "-1");
   }
 
   @Test

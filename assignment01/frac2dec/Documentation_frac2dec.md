@@ -69,7 +69,14 @@ T1 : Function did not return null when `denominator=0`. Fixed it with an if stat
 
 
 # Structural testing
-After running the Specification-based tests, the coverage was 100% line coverage and 100% branch coverage. Hence there was nothing more to cover that was unveiled by looking at the coverage.
+After running the Specification-based tests, the coverage was 96% line coverage (24/25) and 100% branch coverage. The missing line is there because I never instantiate the class Frac2Dec, since fracitonToDecimal is a static method and can be safely ignored. Hence, there was nothing more to cover that was unveiled by looking at the coverage.  
+
+By inspecting the code and running a debugger for a few examples, I could also not think of anything to change about the source code.
 
 
 # Mutation testing
+I ran the Pitest Maven Plugin to generate a report, which created a total of 20 mutants. Of those 20 mutants, 18 were killed. The two surviving mutants concern the line
+```Java
+res.append(((numerator > 0) ^ (denominator > 0)) ? "-" : "");
+```
+where the surviving mutant says "changed conditional boundary". This made me realize, that it would be beneficial to test the signs in T2 - T4 with the boundary value 1 and -1 as well. This did, however, not kill the mutants.
