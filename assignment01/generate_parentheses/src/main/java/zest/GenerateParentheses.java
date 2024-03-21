@@ -8,6 +8,10 @@ public class GenerateParentheses {
     public static List<String> generateParentheses(int n) {
         List<String> combinations = new ArrayList();
         if (n<=0) return combinations;
+
+        // T7 : BUG FOUND, return null if input is greater than 8
+        if (n>8) return null;
+
         generateAll(new char[2 * n], 0, combinations);
         return combinations;
     }
