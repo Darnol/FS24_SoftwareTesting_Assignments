@@ -7,6 +7,9 @@ class Frac2Dec {
     public static String fractionToDecimal(int numerator, int denominator) {
         if (numerator == 0) return "0";
 
+        // BUG FOUND T1
+        if (denominator == 0) return null;
+
         StringBuilder res = new StringBuilder();
         // "+" or "-"
         res.append(((numerator > 0) ^ (denominator > 0)) ? "-" : "");

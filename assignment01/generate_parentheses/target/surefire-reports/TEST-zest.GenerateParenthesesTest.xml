@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report-3.0.xsd" version="3.0" name="zest.GenerateParenthesesTest" time="0.113" tests="9" errors="0" skipped="0" failures="0">
+  <properties>
+    <property name="java.specification.version" value="21"/>
+    <property name="sun.cpu.isalist" value="amd64"/>
+    <property name="sun.jnu.encoding" value="Cp1252"/>
+    <property name="java.class.path" value="C:\Users\domar\Desktop\FS24_repos\FS24_SoftwareTesting_Assignments\assignment01\generate_parentheses\target\test-classes;C:\Users\domar\Desktop\FS24_repos\FS24_SoftwareTesting_Assignments\assignment01\generate_parentheses\target\classes;C:\Users\domar\.m2\repository\org\junit\jupiter\junit-jupiter\5.8.1\junit-jupiter-5.8.1.jar;C:\Users\domar\.m2\repository\org\junit\jupiter\junit-jupiter-api\5.8.1\junit-jupiter-api-5.8.1.jar;C:\Users\domar\.m2\repository\org\opentest4j\opentest4j\1.2.0\opentest4j-1.2.0.jar;C:\Users\domar\.m2\repository\org\junit\platform\junit-platform-commons\1.8.1\junit-platform-commons-1.8.1.jar;C:\Users\domar\.m2\repository\org\apiguardian\apiguardian-api\1.1.2\apiguardian-api-1.1.2.jar;C:\Users\domar\.m2\repository\org\junit\jupiter\junit-jupiter-params\5.8.1\junit-jupiter-params-5.8.1.jar;C:\Users\domar\.m2\repository\org\junit\jupiter\junit-jupiter-engine\5.8.1\junit-jupiter-engine-5.8.1.jar;C:\Users\domar\.m2\repository\org\junit\platform\junit-platform-engine\1.8.1\junit-platform-engine-1.8.1.jar;"/>
+    <property name="java.vm.vendor" value="Oracle Corporation"/>
+    <property name="sun.arch.data.model" value="64"/>
+    <property name="user.variant" value=""/>
+    <property name="java.vendor.url" value="https://java.oracle.com/"/>
+    <property name="user.timezone" value="Europe/Zurich"/>
+    <property name="os.name" value="Windows 10"/>
+    <property name="java.vm.specification.version" value="21"/>
+    <property name="sun.java.launcher" value="SUN_STANDARD"/>
+    <property name="user.country" value="CH"/>
+    <property name="sun.boot.library.path" value="C:\Program Files\Java\jdk-21\bin"/>
+    <property name="sun.java.command" value="C:\Users\domar\AppData\Local\Temp\surefire6574484849754784233\surefirebooter-20240321092813598_3.jar C:\Users\domar\AppData\Local\Temp\surefire6574484849754784233 2024-03-21T09-28-13_469-jvmRun1 surefire-20240321092813598_1tmp surefire_0-20240321092813598_2tmp"/>
+    <property name="jdk.debug" value="release"/>
+    <property name="surefire.test.class.path" value="C:\Users\domar\Desktop\FS24_repos\FS24_SoftwareTesting_Assignments\assignment01\generate_parentheses\target\test-classes;C:\Users\domar\Desktop\FS24_repos\FS24_SoftwareTesting_Assignments\assignment01\generate_parentheses\target\classes;C:\Users\domar\.m2\repository\org\junit\jupiter\junit-jupiter\5.8.1\junit-jupiter-5.8.1.jar;C:\Users\domar\.m2\repository\org\junit\jupiter\junit-jupiter-api\5.8.1\junit-jupiter-api-5.8.1.jar;C:\Users\domar\.m2\repository\org\opentest4j\opentest4j\1.2.0\opentest4j-1.2.0.jar;C:\Users\domar\.m2\repository\org\junit\platform\junit-platform-commons\1.8.1\junit-platform-commons-1.8.1.jar;C:\Users\domar\.m2\repository\org\apiguardian\apiguardian-api\1.1.2\apiguardian-api-1.1.2.jar;C:\Users\domar\.m2\repository\org\junit\jupiter\junit-jupiter-params\5.8.1\junit-jupiter-params-5.8.1.jar;C:\Users\domar\.m2\repository\org\junit\jupiter\junit-jupiter-engine\5.8.1\junit-jupiter-engine-5.8.1.jar;C:\Users\domar\.m2\repository\org\junit\platform\junit-platform-engine\1.8.1\junit-platform-engine-1.8.1.jar;"/>
+    <property name="sun.cpu.endian" value="little"/>
+    <property name="user.home" value="C:\Users\domar"/>
+    <property name="user.language" value="de"/>
+    <property name="java.specification.vendor" value="Oracle Corporation"/>
+    <property name="java.version.date" value="2024-01-16"/>
+    <property name="java.home" value="C:\Program Files\Java\jdk-21"/>
+    <property name="file.separator" value="\"/>
+    <property name="basedir" value="C:\Users\domar\Desktop\FS24_repos\FS24_SoftwareTesting_Assignments\assignment01\generate_parentheses"/>
+    <property name="java.vm.compressedOopsMode" value="Zero based"/>
+    <property name="line.separator" value="&#10;"/>
+    <property name="java.vm.specification.vendor" value="Oracle Corporation"/>
+    <property name="java.specification.name" value="Java Platform API Specification"/>
+    <property name="surefire.real.class.path" value="C:\Users\domar\AppData\Local\Temp\surefire6574484849754784233\surefirebooter-20240321092813598_3.jar"/>
+    <property name="user.script" value=""/>
+    <property name="sun.management.compiler" value="HotSpot 64-Bit Tiered Compilers"/>
+    <property name="java.runtime.version" value="21.0.2+13-LTS-58"/>
+    <property name="user.name" value="domar"/>
+    <property name="stdout.encoding" value="Cp1252"/>
+    <property name="path.separator" value=";"/>
+    <property name="os.version" value="10.0"/>
+    <property name="java.runtime.name" value="Java(TM) SE Runtime Environment"/>
+    <property name="file.encoding" value="UTF-8"/>
+    <property name="java.vm.name" value="Java HotSpot(TM) 64-Bit Server VM"/>
+    <property name="localRepository" value="C:\Users\domar\.m2\repository"/>
+    <property name="java.vendor.url.bug" value="https://bugreport.java.com/bugreport/"/>
+    <property name="java.io.tmpdir" value="C:\Users\domar\AppData\Local\Temp\"/>
+    <property name="java.version" value="21.0.2"/>
+    <property name="user.dir" value="C:\Users\domar\Desktop\FS24_repos\FS24_SoftwareTesting_Assignments\assignment01\generate_parentheses"/>
+    <property name="os.arch" value="amd64"/>
+    <property name="java.vm.specification.name" value="Java Virtual Machine Specification"/>
+    <property name="sun.os.patch.level" value=""/>
+    <property name="native.encoding" value="Cp1252"/>
+    <property name="java.library.path" value="C:\Program Files\Java\jdk-21\bin;C:\WINDOWS\Sun\Java\bin;C:\WINDOWS\system32;C:\WINDOWS;C:\Program Files\Common Files\Oracle\Java\javapath;C:\Windows\System32;C:\Windows;C:\Windows\System32\wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Program Files\Calibre2\;C:\Program Files (x86)\NVIDIA Corporation\PhysX\Common;C:\Eigene Programme\MikTex\miktex\bin\x64\;D:\Eigene Programme\MikTex\miktex\bin\x64\;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\WINDOWS\System32\OpenSSH\;C:\Program Files\Java\jdk1.8.0_181\bin;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\WINDOWS\System32\OpenSSH\;C:\Program Files\Docker\Docker\resources\bin;C:\Program Files\nodejs\;D:\Eigene Programme\gcloud\google-cloud-sdk\bin;D:\Eigene Programme\Git\cmd;C:\Program Files\Amazon\AWSCLIV2\;C:\Users\domar\Desktop\apache-maven-3.9.6-bin\apache-maven-3.9.6\bin;C:\Users\domar\.amplify\bin;C:\python310\Scripts\;C:\python310\;C:\Users\domar\AppData\Local\Microsoft\WindowsApps;C:\Users\domar\AppData\Local\Microsoft\WindowsApps;C:\Users\domar\AppData\Roaming\MiKTeX\2.9\miktex\bin\x64\;C:\Users\domar\AppData\Local\GitHubDesktop\bin;D:\Eigene Programme\Intellj IDEA\bin;D:\Eigene Programme\VSCode\bin;C:\Users\domar\AppData\Roaming\npm;C:\Users\domar\AppData\Local\Coursier\data\bin;C:\Users\domar\Desktop\apache-maven-3.9.6-bin\apache-maven-3.9.6\bin;;."/>
+    <property name="java.vm.info" value="mixed mode, sharing"/>
+    <property name="stderr.encoding" value="Cp1252"/>
+    <property name="java.vendor" value="Oracle Corporation"/>
+    <property name="java.vm.version" value="21.0.2+13-LTS-58"/>
+    <property name="sun.io.unicode.encoding" value="UnicodeLittle"/>
+    <property name="java.class.version" value="65.0"/>
+  </properties>
+  <testcase name="T6_off_point_second_partition" classname="zest.GenerateParenthesesTest" time="0.063"/>
+  <testcase name="T1_" classname="zest.GenerateParenthesesTest" time="0.001"/>
+  <testcase name="T7_on_point_second_partition" classname="zest.GenerateParenthesesTest" time="0.002"/>
+  <testcase name="T4_on_point_first_partition" classname="zest.GenerateParenthesesTest" time="0.004"/>
+  <testcase name="T3_off_point_first_partition" classname="zest.GenerateParenthesesTest" time="0.002"/>
+  <testcase name="T8_in_point_second_partition" classname="zest.GenerateParenthesesTest" time="0.001"/>
+  <testcase name="T5_in_point_first_partition" classname="zest.GenerateParenthesesTest" time="0.001"/>
+  <testcase name="T2_neg_off_point_at_zero_first_partition" classname="zest.GenerateParenthesesTest" time="0.001"/>
+  <testcase name="T1_neg_off_point_first_partition" classname="zest.GenerateParenthesesTest" time="0.001"/>
+</testsuite>
