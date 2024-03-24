@@ -32,6 +32,7 @@ During this step, I also looked at the implementation of the classes. While Pali
 
 # Mutation Testing
 As the last step, I utilized mutation testing to further enhance my test suites. Unfortunately, neither test suite killed all the mutants.
+
 PalindromeOne (mutation coverage 88%, 7 mutations killed out of 8):
 - CONDITIONALS_BOUNDARY: Conditional boundary in the line ```while (start < end)``` was changed to ```while (start <= end)```, and the test suite did not catch it. This change does not affect the behaviour of our method. Actually, the condition could have been written as ```while (start <= end)``` from the get go, and it would not have been wrong. The mutant version simply means that we will be checking if the character in the middle of the integer is equal to itself, which is a redundant step but it will always return true. Thus, the mutant is irrelevant.
   
