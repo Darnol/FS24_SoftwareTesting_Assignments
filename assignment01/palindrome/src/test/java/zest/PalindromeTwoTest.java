@@ -1,6 +1,5 @@
 package zest;
 
-import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.params.ParameterizedTest;
@@ -35,7 +34,7 @@ class PalindromeTwoTest {
     }
 
     @ParameterizedTest
-    @ValueSource(ints = {112, 120, 156, 169, 722, 144, 21922, 7139313})
+    @ValueSource(ints = {112, 722, 144, 21922, 7139313})
     @DisplayName("Non-palindromes with odd number of digits must be dubbed non-palindromes")
     void testOddNonPalindrome(int number) {
         assertFalse(PalindromeTwo.isPalindrome(number),
@@ -70,5 +69,29 @@ class PalindromeTwoTest {
     void testMinVal() {
         assertFalse(PalindromeTwo.isPalindrome(-(int)(Math.pow(2, 20)-1)),
                 "Min val must be dubbed non-palindrome");
+    }
+
+    @ParameterizedTest
+    @ValueSource(ints = {100, 1000})
+    @DisplayName("Testing if statement")
+    void testBoundariesNonPalindrome(int number) {
+        assertFalse(PalindromeTwo.isPalindrome(number),
+                "Testing if statement");
+    }
+
+    @ParameterizedTest
+    @ValueSource(ints = {99, 101, 999, 1001})
+    @DisplayName("Testing if statement")
+    void testBoundariesPalindrome(int number) {
+        assertTrue(PalindromeTwo.isPalindrome(number),
+                "Testing if statement");
+    }
+
+    @ParameterizedTest
+    @ValueSource(ints = {120, 130, 497, 110, 109, 169})
+    @DisplayName("Test mutants")
+    void testMutants(int number) {
+        assertFalse(PalindromeTwo.isPalindrome(number),
+                "Test mutants");
     }
 }
