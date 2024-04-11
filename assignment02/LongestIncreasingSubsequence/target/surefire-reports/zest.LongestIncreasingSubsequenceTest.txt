@@ -1,0 +1,8 @@
+-------------------------------------------------------------------------------
+Test set: zest.LongestIncreasingSubsequenceTest
+-------------------------------------------------------------------------------
+Tests run: 1, Failures: 1, Errors: 0, Skipped: 0, Time elapsed: 0.151 s <<< FAILURE! - in zest.LongestIncreasingSubsequenceTest
+zest.LongestIncreasingSubsequenceTest.testLongestIncreasingSubsequence  Time elapsed: 0.105 s  <<< FAILURE!
+org.opentest4j.AssertionFailedError: expected: <5> but was: <6>
+	at zest.LongestIncreasingSubsequenceTest.testLongestIncreasingSubsequence(LongestIncreasingSubsequenceTest.java:16)
+
