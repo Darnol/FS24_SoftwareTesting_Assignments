@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <annotationProcessing>
+      <profile name="Maven default annotation processors profile" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <module name="ClimbingStairs" />
+        <module name="median-of-arrays" />
+        <module name="generate-parentheses" />
+        <module name="median-of-arrays (1)" />
+        <module name="find-duplicate" />
+        <module name="UniquePathsGrid" />
+        <module name="MergeKSortedLists" />
+        <module name="SortedArray2BST" />
+        <module name="frac-2-dec" />
+        <module name="CourseSchedule" />
+        <module name="palindrome" />
+        <module name="atoi-test (1)" />
+        <module name="atoi-test" />
+        <module name="SumofTwoIntegers" />
+        <module name="longest-increasing-subsequence" />
+        <module name="needle-in-hay" />
+      </profile>
+    </annotationProcessing>
+  </component>
+</project>
