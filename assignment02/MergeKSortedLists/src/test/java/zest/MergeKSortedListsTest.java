@@ -5,53 +5,98 @@ import static org.junit.jupiter.api.Assertions.*;
 import org.junit.jupiter.api.Test;
 
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
 
 class MergeKSortedListsTest {
 
-    @Test
-    public void test_dummy() {
-        assertTrue(true);
+    MergeKSortedLists merger = new MergeKSortedLists();
+
+    public static ListNode createListNode(List<Integer> input) {
+
+        // Reverse the input
+        List<Integer> reversed_input = new ArrayList<>(input);
+        Collections.reverse(reversed_input);
+
+        // Create ListNode to capture the current next and the final output ListNode
+        ListNode current_next = new ListNode();
+        ListNode output_listNode = new ListNode();
+
+        // Loop through input in reverse order
+        for (int i = 0; i < reversed_input.size(); i++) {
+
+            // Get value for new node
+            int i_val;
+            i_val = reversed_input.get(i);
+
+            ListNode i_listNode = new ListNode(i_val);
+
+            if (i > 0) {
+                i_listNode.next = current_next;
+            }
+
+            current_next = i_listNode;
+            output_listNode = i_listNode;
+        }
+
+        return output_listNode;
+    }
+
+    public static List<Integer> getListNodeElements(ListNode listNode_input) {
+        List<Integer> result = new ArrayList<>();
+        ListNode currentNode;
+        ListNode nextNode;
+        currentNode = listNode_input;
+        nextNode = currentNode.next;
+        if (currentNode == null) {
+            return result;
+        } else {
+            result.add(currentNode.val);
+        }
+        while (nextNode != null) {
+            currentNode = nextNode;
+            result.add(currentNode.val);
+            nextNode = currentNode.next;
+        }
+        return result;
     }
 
     @Test
-    public void test_success() {
+    public void test_getListNodeElements_empty() {
+        ListNode emptyListNode = new ListNode();
+        List<Integer> result = getListNodeElements(emptyListNode);
+        List<Integer> expected = List.of(0);
+        assertEquals(expected, result);
+    }
 
-        ListNode[] input = new ListNode[3];
+    @Test
+    public void test_helpers() {
 
-        List<int[]> input_arrays = new ArrayList<int[]>();
+        List<Integer> exp = List.of(1,1,2,3,4,4,5,6);
+        ListNode expected = createListNode(exp);
 
-        int[] i1 = {1,4,5};
-        int[] i2 = {1,3,4};
-        int[] i3 = {2,6};
+        List<Integer> i1 = List.of(1,4,5);
+        List<Integer> i2 = List.of(1,3,4);
+        List<Integer> i3 = List.of(2,6);
 
-        input_arrays.add(i1);
-        input_arrays.add(i2);
-        input_arrays.add(i3);
+        List<List<Integer>> inputs = List.of(i1,i2,i3);
+        ListNode[] inputs_listNode = new ListNode[inputs.size()];
 
-        for (int[] input_array : input_arrays) {
-            ListNode[] tmp_input = new ListNode[input_array.length];
-            // Reverse the input_array and create LinkedList
-            Collections.reverse(Arrays.asList(input_arrays));
-            ListNode newList = new ListNode();
-            for (int i = 0; i < input_array.length; i++) {
-                int input_val = input_array[i];
-                if (i == 0) {
-                    newList = new ListNode(input_val);
-                } else {
-                    newList = new ListNode(input_val, newList);
-                }
-                tmp_input[i] = newList;
-            }
+        for (int i = 0; i < inputs_listNode.length; i++) {
+            List<Integer> l = inputs.get(i);
+            inputs_listNode[i] = createListNode(l);
         }
 
+        ListNode result = merger.mergeKLists(inputs_listNode);
 
+        assertEquals(getListNodeElements(expected), getListNodeElements(result));
+    }
 
-
-
-//        MergeKSortedLists mergerInstance = new MergeKSortedLists();
-
+    @Test
+    public void test_null_empty() {
+        ListNode[] null_input = null;
+        ListNode[] empty_input = new ListNode[0];
+        assertNull(merger.mergeKLists(null_input));
+        assertNull(merger.mergeKLists(empty_input));
     }
 }
