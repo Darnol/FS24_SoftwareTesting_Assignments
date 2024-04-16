@@ -92,11 +92,24 @@ class MergeKSortedListsTest {
     }
 
     @Test
-    public void T1_test_null_empty() {
+    public void T1_1_test_null() {
         ListNode[] null_input = null;
+
+        // Task1 Test implementation
+        // assertNull(merger.mergeKLists(null_input));
+
+        // Task2/3 Test implementation to assert exception
+        assertThrows(IllegalArgumentException.class, () -> {
+            merger.mergeKLists(null_input);
+        });
+    }
+
+    @Test
+    public void T1_2_test_empty() {
+        ListNode expected = new ListNode();
         ListNode[] empty_input = new ListNode[0];
-        assertNull(merger.mergeKLists(null_input));
-        assertNull(merger.mergeKLists(empty_input));
+        ListNode result = merger.mergeKLists(empty_input);
+        assertEquals(getListNodeElements(expected), getListNodeElements(result));
     }
 
     @Test
@@ -258,4 +271,106 @@ class MergeKSortedListsTest {
         ListNode result = merger.mergeKLists(inputs_listNode);
         assertEquals(getListNodeElements(expected), getListNodeElements(result));
     }
+
+    @Test
+    public void T9_test_pre1_inputSize() {
+
+        List<Integer> i_invalid = Collections.nCopies(10001, 1);
+        List<List<Integer>> inputs = List.of(i_invalid);
+        ListNode[] inputs_listNode = new ListNode[inputs.size()];
+        for (int i = 0; i < inputs_listNode.length; i++) {
+            List<Integer> l = inputs.get(i);
+            inputs_listNode[i] = createListNode(l);
+        }
+        assertThrows(IllegalArgumentException.class, () -> {
+            merger.mergeKLists(inputs_listNode);
+        });
+    }
+
+    @Test
+    public void T10_test_pre1_inputSize_valid() {
+
+        List<Integer> i_valid = Collections.nCopies(10000, 1);
+
+        List<Integer> exp = new ArrayList<>(i_valid);
+        ListNode expected = createListNode(exp);
+
+        List<List<Integer>> inputs = List.of(i_valid);
+        ListNode[] inputs_listNode = new ListNode[inputs.size()];
+        for (int i = 0; i < inputs_listNode.length; i++) {
+            List<Integer> l = inputs.get(i);
+            inputs_listNode[i] = createListNode(l);
+        }
+
+        ListNode result = merger.mergeKLists(inputs_listNode);
+        assertEquals(getListNodeElements(expected), getListNodeElements(result));
+    }
+
+    @Test
+    public void T11_test_pre2_minVal() {
+
+        List<Integer> i_invalid = List.of(-10001,1,0,-1);
+        List<List<Integer>> inputs = List.of(i_invalid);
+        ListNode[] inputs_listNode = new ListNode[inputs.size()];
+        for (int i = 0; i < inputs_listNode.length; i++) {
+            List<Integer> l = inputs.get(i);
+            inputs_listNode[i] = createListNode(l);
+        }
+        assertThrows(IllegalArgumentException.class, () -> {
+            merger.mergeKLists(inputs_listNode);
+        });
+    }
+
+    @Test
+    public void T12_test_pre2_minVal_valid() {
+
+        List<Integer> exp = List.of(-10000,-1,0,1);
+        ListNode expected = createListNode(exp);
+
+        List<Integer> i_invalid = List.of(-10000,-1,0,1);
+        List<List<Integer>> inputs = List.of(i_invalid);
+        ListNode[] inputs_listNode = new ListNode[inputs.size()];
+        for (int i = 0; i < inputs_listNode.length; i++) {
+            List<Integer> l = inputs.get(i);
+            inputs_listNode[i] = createListNode(l);
+        }
+
+        ListNode result = merger.mergeKLists(inputs_listNode);
+        assertEquals(getListNodeElements(expected), getListNodeElements(result));
+    }
+
+    @Test
+    public void T13_test_pre2_maxVal() {
+
+        List<Integer> i_invalid = List.of(10001,1,0,-1);
+        List<List<Integer>> inputs = List.of(i_invalid);
+        ListNode[] inputs_listNode = new ListNode[inputs.size()];
+        for (int i = 0; i < inputs_listNode.length; i++) {
+            List<Integer> l = inputs.get(i);
+            inputs_listNode[i] = createListNode(l);
+        }
+        assertThrows(IllegalArgumentException.class, () -> {
+            merger.mergeKLists(inputs_listNode);
+        });
+    }
+
+    @Test
+    public void T14_test_pre2_maxVal_valid() {
+
+        List<Integer> exp = List.of(-1,0,1,10000);
+        ListNode expected = createListNode(exp);
+
+        List<Integer> i_invalid = List.of(-1,0,1,10000);
+        List<List<Integer>> inputs = List.of(i_invalid);
+        ListNode[] inputs_listNode = new ListNode[inputs.size()];
+        for (int i = 0; i < inputs_listNode.length; i++) {
+            List<Integer> l = inputs.get(i);
+            inputs_listNode[i] = createListNode(l);
+        }
+
+        ListNode result = merger.mergeKLists(inputs_listNode);
+        assertEquals(getListNodeElements(expected), getListNodeElements(result));
+    }
+
+    // TODO: Implement PRE4 tests after implementation
 }
