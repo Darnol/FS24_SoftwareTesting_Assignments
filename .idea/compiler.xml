@@ -12,13 +12,17 @@
         <module name="median-of-arrays (1)" />
         <module name="find-duplicate" />
         <module name="UniquePathsGrid" />
+        <module name="median-of-arrays (2)" />
         <module name="MergeKSortedLists" />
         <module name="SortedArray2BST" />
         <module name="frac-2-dec" />
         <module name="CourseSchedule" />
+        <module name="atoi-test (2)" />
+        <module name="sorted-array-2-bst" />
         <module name="palindrome" />
         <module name="atoi-test (1)" />
         <module name="atoi-test" />
+        <module name="merge-k-sorted-lists" />
         <module name="SumofTwoIntegers" />
         <module name="longest-increasing-subsequence" />
         <module name="needle-in-hay" />
