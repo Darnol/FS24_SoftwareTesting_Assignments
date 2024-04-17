@@ -1,5 +1,7 @@
 package zest;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.PriorityQueue;
 
 class ListNode {
@@ -46,6 +48,25 @@ public class MergeKSortedLists {
             if (currentNode.val > maxVal) {maxVal = currentNode.val;}
         }
         return maxVal;
+    }
+
+    private static boolean checkListNodeSorted(ListNode listNode_input) {
+        ListNode currentNode;
+        ListNode nextNode;
+        currentNode = listNode_input;
+
+        // If only one value, input is sorted
+        if (currentNode.next == null) {return true;}
+
+        while (currentNode.next != null) {
+            int old_val = currentNode.val;
+            currentNode = currentNode.next;
+            int new_val = currentNode.val;
+            if (new_val < old_val) {
+                return false;
+            }
+        }
+        return true;
     }
 
     public ListNode mergeKLists(ListNode[] lists) {
@@ -95,7 +116,13 @@ public class MergeKSortedLists {
         }
 
         // PRE4 : Each input linked list is sorted itself.
-        // TODO: Implement recursively
+        for (ListNode node : lists) {
+            if (node != null) {
+                if (!checkListNodeSorted(node)) {
+                    throw new IllegalArgumentException("All input list nodes must be sorted");
+                }
+            }
+        }
 
         PriorityQueue<ListNode> queue = new PriorityQueue<>(lists.length, (a, b) -> a.val - b.val);
 

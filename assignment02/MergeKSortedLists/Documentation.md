@@ -21,7 +21,7 @@ I added code directly to the method `mergeKLists` with notes of which contract i
 - Pre1 : The number of all nodes in the input combined is in the range [0,10^4]. For this, I added a helper method in the MergeKSortedLists class `getListNodeCount` which returns the number of elements linked to the linked list.
 - Pre2 : Each node value in the input is in the range [-10^4,10^4]. For this, two helper methods `getMinVal` and `getMaxVal` were added.
 - Pre3 : The input is not null. Changed in the provided solution. Had to adjust T1_1 to accommodate the newly implemented pre-condition.
-- Pre4 : Each linked list of the input is sorted. 
+- Pre4 : Each linked list of the input is sorted. Had to adjust T3, T7 and T8 to accommodate the newly implemented pre-condition.
 
 ### Post-conditions
 - Post1 : The output is one single linked list

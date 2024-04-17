@@ -139,9 +139,6 @@ class MergeKSortedListsTest {
         /*
         Test input where it is a single linked list with links
          */
-        List<Integer> exp = List.of(3,1,2);
-        ListNode expected = createListNode(exp);
-
         List<Integer> i1 = List.of(3,1,2);
 
         List<List<Integer>> inputs = List.of(i1);
@@ -152,8 +149,10 @@ class MergeKSortedListsTest {
             inputs_listNode[i] = createListNode(l);
         }
 
-        ListNode result = merger.mergeKLists(inputs_listNode);
-        assertEquals(getListNodeElements(expected), getListNodeElements(result));
+        assertThrows(IllegalArgumentException.class, () -> {
+            merger.mergeKLists(inputs_listNode);
+        });
+
     }
 
     @Test
@@ -231,9 +230,6 @@ class MergeKSortedListsTest {
         /*
         Test input that is a linked list, but not sorted
          */
-        List<Integer> exp = List.of(10,30,20);
-        ListNode expected = createListNode(exp);
-
         List<Integer> i1 = List.of(10);
         List<Integer> i2 = List.of(30,20);
 
@@ -245,8 +241,9 @@ class MergeKSortedListsTest {
             inputs_listNode[i] = createListNode(l);
         }
 
-        ListNode result = merger.mergeKLists(inputs_listNode);
-        assertEquals(getListNodeElements(expected), getListNodeElements(result));
+        assertThrows(IllegalArgumentException.class, () -> {
+            merger.mergeKLists(inputs_listNode);
+        });
     }
 
     @Test
@@ -254,9 +251,6 @@ class MergeKSortedListsTest {
         /*
         Test input that is a linked list, but not sorted
          */
-        List<Integer> exp = List.of(10,30,20);
-        ListNode expected = createListNode(exp);
-
         List<Integer> i1 = List.of(30,20);
         List<Integer> i2 = List.of(10);
 
@@ -268,8 +262,9 @@ class MergeKSortedListsTest {
             inputs_listNode[i] = createListNode(l);
         }
 
-        ListNode result = merger.mergeKLists(inputs_listNode);
-        assertEquals(getListNodeElements(expected), getListNodeElements(result));
+        assertThrows(IllegalArgumentException.class, () -> {
+            merger.mergeKLists(inputs_listNode);
+        });
     }
 
     @Test
@@ -372,5 +367,4 @@ class MergeKSortedListsTest {
         assertEquals(getListNodeElements(expected), getListNodeElements(result));
     }
 
-    // TODO: Implement PRE4 tests after implementation
 }
