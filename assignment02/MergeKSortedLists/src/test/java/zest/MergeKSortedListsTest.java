@@ -1,8 +1,11 @@
 package zest;
 
 import static org.junit.jupiter.api.Assertions.*;
-
 import org.junit.jupiter.api.Test;
+
+import net.jqwik.api.constraints.*;
+import net.jqwik.api.*;
+
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -367,4 +370,15 @@ class MergeKSortedListsTest {
         assertEquals(getListNodeElements(expected), getListNodeElements(result));
     }
 
+
+
+
+    // PROPERTY BASED TESTS
+    @Property
+    void sameLengthAndSorted(
+        @ForAll
+        @Size(min = 0, max = 10) List<@IntRange(max=2) Integer> numbers
+    ) {
+
+    }
 }
