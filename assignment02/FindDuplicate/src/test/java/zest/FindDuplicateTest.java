@@ -4,24 +4,16 @@ import org.junit.jupiter.api.Test;
 
 import net.jqwik.api.Arbitraries;
 import net.jqwik.api.Arbitrary;
-import net.jqwik.api.Assume;
 import net.jqwik.api.ForAll;
 import net.jqwik.api.Property;
 import net.jqwik.api.Provide;
 import net.jqwik.api.Tuple;
-import net.jqwik.api.arbitraries.IntegerArbitrary;
-import net.jqwik.api.constraints.IntRange;
-import net.jqwik.api.constraints.Size;
 
 import static org.junit.jupiter.api.Assertions.*;
 
 import java.util.ArrayList;
 import java.util.Collections;
-import java.util.HashSet;
 import java.util.List;
-
-import org.junit.jupiter.api.Test;
-import static org.junit.jupiter.api.Assertions.*;
 
 class FindDuplicateTest {
 
@@ -82,18 +74,13 @@ class FindDuplicateTest {
                                 list_edited.set(i, duplicate);
                     }
                     Collections.shuffle(list_edited);
-                    System.out.println(Tuple.of(list_edited, duplicate));
+                    // System.out.println(Tuple.of(list_edited, duplicate));
                     return Tuple.of(list_edited, duplicate);
                 })
             )
         )
         );
         }
-
-
-
-
-
 
     private int[] convertListToArray(List<Integer> numbers) {
         int[] array = numbers
