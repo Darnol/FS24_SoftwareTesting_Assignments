@@ -1,15 +1,16 @@
 package zest;
 
 import static org.junit.jupiter.api.Assertions.*;
+
 import org.junit.jupiter.api.Test;
 
 import net.jqwik.api.constraints.*;
 import net.jqwik.api.*;
 
-
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
+import java.util.Set;
 
 class MergeKSortedListsTest {
 
@@ -46,6 +47,12 @@ class MergeKSortedListsTest {
     }
 
     public static List<Integer> getListNodeElements(ListNode listNode_input) {
+
+        // if the input is null return an empty list
+        if (listNode_input == null) {
+            return new ArrayList<Integer>();
+        }
+
         List<Integer> result = new ArrayList<>();
         ListNode currentNode;
         ListNode nextNode;
@@ -74,14 +81,15 @@ class MergeKSortedListsTest {
 
     @Test
     public void test_helpers() {
-        List<Integer> exp = List.of(1,1,2,3,4,4,5,6);
+        List<Integer> exp = List.of(0,1,1,2,3,4,4,5,6);
         ListNode expected = createListNode(exp);
 
+        List<Integer> i0 = List.of();
         List<Integer> i1 = List.of(1,4,5);
         List<Integer> i2 = List.of(1,3,4);
         List<Integer> i3 = List.of(2,6);
 
-        List<List<Integer>> inputs = List.of(i1,i2,i3);
+        List<List<Integer>> inputs = List.of(i0,i1,i2,i3);
         ListNode[] inputs_listNode = new ListNode[inputs.size()];
 
         for (int i = 0; i < inputs_listNode.length; i++) {
@@ -374,11 +382,41 @@ class MergeKSortedListsTest {
 
 
     // PROPERTY BASED TESTS
-    @Property
+    @Property(tries = 1000)
     void sameLengthAndSorted(
-        @ForAll
-        @Size(min = 0, max = 10) List<@IntRange(max=2) Integer> numbers
+            @ForAll
+            @Size(max = 3) List<@Size(min = 0, max = 10) List<@IntRange(min=-10000, max=10000) Integer>> listOfIntegerLists
     ) {
 
+        // This list will hold the expected result, which is one big list, sorted
+        List<Integer> listExpected = new ArrayList<>();
+
+        // make sure the input is sorted, each of the generated lists must be sorted
+        for (List<Integer> integerList : listOfIntegerLists) {
+            // if the integerList is empty, do add a zero, because that is what
+            if (!integerList.isEmpty()) {
+                Collections.sort(integerList); // first sort
+                listExpected.addAll(integerList); // after sort add to expected result
+            } else {
+                listExpected.add(0); // if the interList is empty, add a dummy 0
+            }
+        }
+
+        // Create the expected listNode from the expected list of integers, first sort
+        Collections.sort(listExpected);
+        ListNode listNodeExpected = createListNode(listExpected);
+
+        // create linked list from the set of sorted integer lists
+        ListNode[] inputs_listNode = new ListNode[listOfIntegerLists.size()];
+        for (int i = 0; i < inputs_listNode.length; i++) {
+            List<Integer> l = listOfIntegerLists.get(i);
+            inputs_listNode[i] = createListNode(l);
+        }
+
+        // test. also account for empty input
+        ListNode result = merger.mergeKLists(inputs_listNode);
+        assertEquals(getListNodeElements(listNodeExpected), getListNodeElements(result));
+
     }
+
 }

@@ -36,3 +36,4 @@ The following test have been added to test the respective contracts:
 - Pre2 : T11 - T14
 
 ## Task 4: Property-Based Testing
+I added a property based test `sameLengthAndSorted` which tests for correct outputs for any kind of combination of valid inputs. Valid inputs (possibly empty) lists of sorted integer lists.
