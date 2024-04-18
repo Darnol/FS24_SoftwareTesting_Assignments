@@ -40,11 +40,20 @@ public class FindDuplicate {
             hare = nums[hare];
 
         }
+        final int duplicate = hare;
         //Postconditions:
-        // Check if hare is not in the array
-        if (hare < 1 || hare > nums.length) {
+        // Check if duplicate is between 1 and n
+        if (duplicate < 1 || duplicate > nums.length) {
+            throw new RuntimeException("Duplicate value is not between 1 and n");
+        }
+        // Check if duplicate is in the array
+        if (!Arrays.stream(nums).anyMatch(x -> x == duplicate)) {
             throw new RuntimeException("Input array does not contain the duplicate value");
         }
-        return hare;
+        // Check if duplicate is in the array more than once
+        if (Arrays.stream(nums).filter(x -> x == duplicate).count() < 2) {
+            throw new RuntimeException("Input array does not contain the duplicate value multiple times");
+        }
+        return duplicate;
     }
 }

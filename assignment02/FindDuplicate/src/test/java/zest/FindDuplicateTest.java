@@ -33,6 +33,8 @@ class FindDuplicateTest {
     void testFindDuplicate_InvalidValues_ThrowsIllegalArgumentException() {
         int[] nums = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11};
         assertThrows(IllegalArgumentException.class, () -> FindDuplicate.findDuplicate(nums));
+        int[] nums2 = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 0};
+        assertThrows(IllegalArgumentException.class, () -> FindDuplicate.findDuplicate(nums2));
     }
 
     @Test
@@ -45,7 +47,7 @@ class FindDuplicateTest {
 
  
     @Property
-        void testFindDuplicate_ValidInput_ReturnsDuplicateValue(
+        void testFindDuplicate_Property(
             @ForAll("generateListWithDuplicate") Tuple.Tuple2<List<Integer>, Integer> tuple
         ) 
         {
