@@ -1,11 +1,16 @@
 package zest;
 
+import net.jqwik.api.ForAll;
+import net.jqwik.api.Property;
+import net.jqwik.api.Report;
+import net.jqwik.api.Reporting;
+import net.jqwik.api.constraints.IntRange;
+import net.jqwik.api.constraints.Size;
+import net.jqwik.api.constraints.UniqueElements;
 import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.*;
 
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.List;
+import java.util.*;
 import java.util.stream.IntStream;
 
 class SortedArrayToBSTTest {
@@ -44,7 +49,7 @@ class SortedArrayToBSTTest {
     }
 
     @Test
-    public void T3_test_len_multi() {
+    public void T3_1_test_len_multi() {
 
         int[] input = new int[]{-10, -3, 0, 5, 9};
 
@@ -99,13 +104,80 @@ class SortedArrayToBSTTest {
     }
 
     @Test
-    public void T8_test_pre4() {
+    public void T8_test_post1_post2() {
 
-        int[] input = null;
+        int[] input = new int[]{-10, -3, 0, 5, 9};
+
+        // expected
+        int expectedLength = input.length;
+        Set<Integer> expectedIntegerSet = new HashSet<>(Arrays.stream(input).boxed().toList());
+
+        TreeNode root = converter.sortedArrayToBST(input);
+        List<Integer> result = converter.levelOrderTraversal(root);
+
+        Set<Integer> resultIntegerSet = new HashSet<>(result);
+
+        assertEquals(expectedLength, input.length);
+        assertEquals(expectedIntegerSet, resultIntegerSet);
+    }
+
+
+    // PROPERTY-BASED TESTS
+    @Property(tries = 1000)
+    @Report(Reporting.GENERATED)
+    void test_validInputs(
+        @ForAll
+        @Size(max = 5)
+        @UniqueElements
+        List<@IntRange(min=0, max=10000) Integer> inputIntegerList
+    ) {
+
+        // Sort the input
+        Collections.sort(inputIntegerList);
+
+        // input to int array
+        int[] input = inputIntegerList.stream().mapToInt(Integer::intValue).toArray();
+
+        // expected
+        int expectedLength = input.length;
+        Set<Integer> expectedIntegerSet = new HashSet<>(Arrays.stream(input).boxed().toList());
+
+        TreeNode root = converter.sortedArrayToBST(input);
+        List<Integer> result = converter.levelOrderTraversal(root);
+
+        Set<Integer> resultIntegerSet = new HashSet<>(result);
+
+        assertEquals(expectedLength, input.length);
+        assertEquals(expectedIntegerSet, resultIntegerSet);
+    }
+
+    @Property(tries = 1000)
+    @Report(Reporting.GENERATED)
+    void test_invalidInputs_notUniqueNorSorted(
+            @ForAll
+            @Size(min=1, max = 5) // do not consider empty list as input, min > 0
+            List<@IntRange(min=0, max=100) Integer> inputIntegerList
+            // Remove @UniqueElements annotation
+    ) {
+
+        // Sort the input in descending order, first sort then reverse
+        Collections.sort(inputIntegerList);
+        Collections.reverse(inputIntegerList);
+
+        // Add at least one duplicated element to list
+        inputIntegerList.add(inputIntegerList.get(0));
+
+        // input to int array
+        int[] input = inputIntegerList.stream().mapToInt(Integer::intValue).toArray();
 
         assertThrows(IllegalArgumentException.class, () -> {
             converter.sortedArrayToBST(input);
         });
+
     }
+
+
+
+
 
 }

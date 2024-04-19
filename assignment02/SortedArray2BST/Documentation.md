@@ -34,6 +34,14 @@ For POST1 and POST2, I added code at the end of the ``sortedArrayToBST`` method.
 For INV1 and INV2, I added a helper function ``checkInvariant_1_2`` which throws an error if the invariant is violated.
 
 ## Task 3: Testing Contracts
-The pre-conditions are tested in the tests T4-T7. No further additions or helpers are needed 
+The normal working of the function given the added contracts are covered through tests T1 to T3.  
+The pre-conditions are tested in the tests T4-T7. No further additions or helpers are needed.
+The post-conditions are tested in the test T8.  
+The invariants are implicitly tested with those tests T4-T8 and don't need additional explicit testing.
 
 ## Task 4: Property-Based Testing
+For the property-based tests, I identified the following tests, implemented in the ``PROPERTY-BASED TESTS`` section in the test file:
+- Pre-conditions : Test various valid inputs of variable length within the bounds given by PRE2. Make sure they are unique. Verify by checking the post-conditions.
+- Pre-conditions : Do the same, but make sure the inputs are not unique and/or sorted and verify that the appropriate exceptions are thrown.
+
+To verify the outcome of all the generated tests, I make use of the post-conditions. If they hold, the result should be what we expect.
