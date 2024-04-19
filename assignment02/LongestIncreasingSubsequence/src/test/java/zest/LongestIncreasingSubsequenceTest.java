@@ -4,20 +4,14 @@ import org.junit.jupiter.api.Test;
 
 import net.jqwik.api.Arbitraries;
 import net.jqwik.api.Arbitrary;
-import net.jqwik.api.Assume;
 import net.jqwik.api.ForAll;
 import net.jqwik.api.Property;
 import net.jqwik.api.Provide;
 import net.jqwik.api.Tuple;
-import net.jqwik.api.arbitraries.IntegerArbitrary;
-import net.jqwik.api.constraints.IntRange;
-import net.jqwik.api.constraints.Size;
-
 
 import static org.junit.jupiter.api.Assertions.*;
 
 import java.util.ArrayList;
-import java.util.Collections;
 import java.util.List;
 
 public class LongestIncreasingSubsequenceTest {
@@ -47,7 +41,7 @@ public class LongestIncreasingSubsequenceTest {
     }
 
     @Property
-        void testFindLIS_ValidInput_ReturnsLISValue(
+        void testLengthOfLIS_Property(
             @ForAll("generateListWithLIS") Tuple.Tuple2<List<Integer>, Integer> tuple
         ) 
         {
@@ -66,26 +60,27 @@ public class LongestIncreasingSubsequenceTest {
             Arbitraries.integers().between(1, size).flatMap(duplicate ->
             Arbitraries.integers().between(0, 0).list().ofSize(size)
                 .map(list -> {
-                    System.out.println("#############");
                     List<Integer> list_edited = new ArrayList<>();
                     int LIS_length = size;
                     list_edited.add(LIS_start_value);
                     int increased_value = 0;
+                    // first create array where LIS length is the same as the size of the array
                     for (int i = 1; i < list.size(); i++) {
                         increased_value = list_edited.get(i-1) + (int) (Math.random() * 100) + 1;
                         list_edited.add(increased_value);
                      
                     }
-                    System.out.println("List edited 1: " + list_edited);
-                    System.out.println("LIS length: " + LIS_length);
                     for (int i = 1; i < list.size(); i++) {
                         if (Math.random() < 0.5) {
+                            //chance to decrease the value, which will decrease the LIS length
                             list_edited.set(i, list_edited.get(i-1) - ((int) (Math.random() * 100) + 1));
+                            LIS_length--;
+                        } else if (Math.random() < 0.2) {
+                            //Small chance to change value to a duplicate, which will decrease the LIS length
+                            list_edited.set(i, list_edited.get(i-1));
                             LIS_length--;
                         }
                     }
-                    System.out.println("List edited 2: " + list_edited);
-                    System.out.println("LIS length: " + LIS_length);
                     return Tuple.of(list_edited, LIS_length);
                 })
             )
