@@ -1,6 +1,6 @@
-## Climbing Stairs:
+# Climbing Stairs:
 
-# Task 1: Code Coverage
+## Task 1: Code Coverage
 I started by reading the specifications of the program and checking out the implementation of the solution. I came up with the test cases below to cover 100% of the lines:
 - n is a negative integer
 - n is 0
@@ -19,7 +19,7 @@ if (n <= 2) {
 
 As this problem can be handled by contracts that will be implemented in the next step, I did not change the solution code. Also, the test case for non-integer n caused a compile time error because of Java's own type safety practices.
 
-# Task 2: Designin Contracts
+## Task 2: Designin Contracts
 Now, we have to determine the pre-conditions, post-conditions and invariants. Climbing Stairs method takes a single input and returns a single output. In the specifications, it is clearly stated that the input must be a positive integer while the output must be a non-negative integer. We also know that Climbing Stairs class has no internal state elements such as class variables or data structures. This information is enough to create a simple contract for our code.
 
 - pre-conditions:
@@ -61,10 +61,10 @@ public long climbStairs(int n) {
     }
 ```
 
-# Task 3: Testing Contracts
+## Task 3: Testing Contracts
 For this part, I reused the test cases I devised in task 1. However, I changed the test cases for negative integer and 0 to expect an exception as these input values violate pre-conditions. I had 5 test cases in total, all of which passed.
 
-# Test 4: Property Based Testing
+## Test 4: Property Based Testing
 I managed to figure out two main properties of the climbing stairs method:
 - given a positive integer n, the method must always return result(n-1)+result(n-2), excluding n = {1, 2}
 - given a positive integer n, the method must always return a non-negative integer
