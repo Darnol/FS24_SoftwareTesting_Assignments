@@ -13,7 +13,8 @@ When analyzed with JaCoCo, this test suite provided 100% line coverage. However,
 
 ```if (n <= 2) {
             return n;
-    }```
+    }
+```
 
 As this problem can be handled by contracts that will be implemented in the next step, I did not change the solution code. Also, the test case for non-integer n caused a compile time error because of Java's own type safety practices.
 
