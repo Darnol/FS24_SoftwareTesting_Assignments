@@ -1,0 +1,53 @@
+[INFO] Scanning for projects...
+[INFO] 
+[INFO] ------------------< org.example:merge-k-sorted-lists >------------------
+[INFO] Building merge-k-sorted-lists 1.0-SNAPSHOT
+[INFO]   from pom.xml
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] --- clean:3.2.0:clean (default-clean) @ merge-k-sorted-lists ---
+[INFO] Deleting /Users/dominik/Desktop/FS24_Repos/FS24_SoftwareTesting_Assignments/assignment02/MergeKSortedLists/target
+[INFO] 
+[INFO] --- jacoco:0.8.11:prepare-agent (default-prepare-agent) @ merge-k-sorted-lists ---
+[INFO] argLine set to -javaagent:/Users/dominik/.m2/repository/org/jacoco/org.jacoco.agent/0.8.11/org.jacoco.agent-0.8.11-runtime.jar=destfile=/Users/dominik/Desktop/FS24_Repos/FS24_SoftwareTesting_Assignments/assignment02/MergeKSortedLists/target/jacoco.exec
+[INFO] 
+[INFO] --- resources:3.3.1:resources (default-resources) @ merge-k-sorted-lists ---
+[INFO] skip non existing resourceDirectory /Users/dominik/Desktop/FS24_Repos/FS24_SoftwareTesting_Assignments/assignment02/MergeKSortedLists/src/main/resources
+[INFO] 
+[INFO] --- compiler:3.11.0:compile (default-compile) @ merge-k-sorted-lists ---
+[INFO] Changes detected - recompiling the module! :source
+[INFO] Compiling 1 source file with javac [debug target 19] to target/classes
+[INFO] 
+[INFO] --- resources:3.3.1:testResources (default-testResources) @ merge-k-sorted-lists ---
+[INFO] skip non existing resourceDirectory /Users/dominik/Desktop/FS24_Repos/FS24_SoftwareTesting_Assignments/assignment02/MergeKSortedLists/src/test/resources
+[INFO] 
+[INFO] --- compiler:3.11.0:testCompile (default-testCompile) @ merge-k-sorted-lists ---
+[INFO] Changes detected - recompiling the module! :dependency
+[INFO] Compiling 1 source file with javac [debug target 19] to target/test-classes
+[INFO] 
+[INFO] --- surefire:3.2.2:test (default-test) @ merge-k-sorted-lists ---
+[INFO] Using auto detected provider org.apache.maven.surefire.junitplatform.JUnitPlatformProvider
+[INFO] 
+[INFO] -------------------------------------------------------
+[INFO]  T E S T S
+[INFO] -------------------------------------------------------
+[INFO] Running zest.MergeKSortedListsTest
+[INFO] Tests run: 10, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.156 s -- in zest.MergeKSortedListsTest
+[INFO] 
+[INFO] Results:
+[INFO] 
+[INFO] Tests run: 10, Failures: 0, Errors: 0, Skipped: 0
+[INFO] 
+[INFO] 
+[INFO] --- jar:3.3.0:jar (default-jar) @ merge-k-sorted-lists ---
+[INFO] Building jar: /Users/dominik/Desktop/FS24_Repos/FS24_SoftwareTesting_Assignments/assignment02/MergeKSortedLists/target/merge-k-sorted-lists-1.0-SNAPSHOT.jar
+[INFO] 
+[INFO] --- jacoco:0.8.11:report (default-report) @ merge-k-sorted-lists ---
+[INFO] Loading execution data file /Users/dominik/Desktop/FS24_Repos/FS24_SoftwareTesting_Assignments/assignment02/MergeKSortedLists/target/jacoco.exec
+[INFO] Analyzed bundle 'merge-k-sorted-lists' with 2 classes
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD SUCCESS
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time:  7.266 s
+[INFO] Finished at: 2024-04-16T16:06:41+02:00
+[INFO] ------------------------------------------------------------------------
