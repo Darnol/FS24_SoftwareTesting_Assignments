@@ -11,7 +11,8 @@ I started by reading the specifications of the program and checking out the impl
 
 When analyzed with JaCoCo, this test suite provided 100% line coverage. However, as the implementation of the solution only provided the below condition, the tests for negative integer and 0 cases failed to meet the specifications.
 
-```if (n <= 2) {
+```
+if (n <= 2) {
             return n;
     }
 ```
@@ -31,7 +32,8 @@ Now, we have to determine the pre-conditions, post-conditions and invariants. Cl
 
 For the implementation of pre-conditions and post-conditions, I opted for if statements instead of assertions. The reason behind this was because although I have control over my own coding environment, I do not have control over the environment in which my solutions could possibly be tested. As assertions can be disabled with a simple JVM parameter, I believed it would be safer to use if statements. I modified the method as follows:
 
-```public long climbStairs(int n) {
+```
+public long climbStairs(int n) {
         // check the pre-conditions
         if(!(n > 0)) {
             throw new RuntimeException("Input must be positive");
@@ -56,7 +58,8 @@ For the implementation of pre-conditions and post-conditions, I opted for if sta
 
         // return if the post-conditions hold
         return allWays;
-    }```
+    }
+```
 
 # Task 3: Testing Contracts
 For this part, I reused the test cases I devised in task 1. However, I changed the test cases for negative integer and 0 to expect an exception as these input values violate pre-conditions. I had 5 test cases in total, all of which passed.
