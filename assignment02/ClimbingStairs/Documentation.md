@@ -75,13 +75,16 @@ Final line coverage was 76% as some of the if statements implemented for contrac
 
 ```
 throw new RuntimeException("Input must be an integer");
-``` was not read because Java's type safety practices does not allow to pass a non-int to a method that expects an int.
+```
+was not read because Java's type safety practices does not allow to pass a non-int to a method that expects an int.
 
 ```
 throw new RuntimeException("The answer must be non-negative");
-``` was not read because the method works in a way that satisfies this post-condition in every tested case.
+```
+was not read because the method works in a way that satisfies this post-condition in every tested case.
 
 ```
 throw new RuntimeException("The answer must be an integer");
-``` was not read because the method works in a way that satisfies this post-condition in every tested case.
+```
+was not read because the method works in a way that satisfies this post-condition in every tested case.
 
