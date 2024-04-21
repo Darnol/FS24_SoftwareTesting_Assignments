@@ -1,0 +1,37 @@
+[INFO] -------------------------------------------------------
+[INFO]  T E S T S
+[INFO] -------------------------------------------------------
+[INFO] Running zest.CourseScheduleTest
+[INFO] Tests run: 8, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.172 s - in zest.CourseScheduleTest
+[INFO] Running zest.CourseScheduleTest
+timestamp = 2024-04-22T00:24:00.629678, CourseScheduleTest:returnsTrueIfNoCycles = 
+                              |-----------------------jqwik-----------------------
+tries = 625                   | # of calls to property
+checks = 625                  | # of not rejected calls
+generation = EXHAUSTIVE       | parameters are exhaustively generated
+after-failure = SAMPLE_FIRST  | try previously failed sample, then previous seed
+when-fixed-seed = ALLOW       | fixing the random seed is allowed
+edge-cases#mode = MIXIN       | edge cases are mixed in
+edge-cases#total = 0          | # of all combined edge cases
+edge-cases#tried = 0          | # of edge cases tried in current run
+seed = 1193807406992783548    | random seed to reproduce generated values
+
+
+timestamp = 2024-04-22T00:24:00.723503800, CourseScheduleTest:returnsFalseIfCycles = 
+                              |-----------------------jqwik-----------------------
+tries = 625                   | # of calls to property
+checks = 625                  | # of not rejected calls
+generation = EXHAUSTIVE       | parameters are exhaustively generated
+after-failure = SAMPLE_FIRST  | try previously failed sample, then previous seed
+when-fixed-seed = ALLOW       | fixing the random seed is allowed
+edge-cases#mode = MIXIN       | edge cases are mixed in
+edge-cases#total = 0          | # of all combined edge cases
+edge-cases#tried = 0          | # of edge cases tried in current run
+seed = -2384929459849205824   | random seed to reproduce generated values
+
+
+[INFO] Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.77 s - in zest.CourseScheduleTest
+[INFO] 
+[INFO] Results:
+[INFO]
+[INFO] Tests run: 10, Failures: 0, Errors: 0, Skipped: 0

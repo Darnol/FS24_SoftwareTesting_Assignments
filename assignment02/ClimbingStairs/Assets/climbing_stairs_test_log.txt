@@ -1,0 +1,37 @@
+[INFO] -------------------------------------------------------
+[INFO]  T E S T S
+[INFO] -------------------------------------------------------
+[INFO] Running zest.ClimbingStairsTest
+[INFO] Tests run: 5, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.806 s - in zest.ClimbingStairsTest
+[INFO] Running zest.ClimbingStairsTest
+timestamp = 2024-04-22T00:28:01.864279200, ClimbingStairsTest:resultAlwaysPositive = 
+                              |-----------------------jqwik-----------------------
+tries = 70                    | # of calls to property
+checks = 70                   | # of not rejected calls
+generation = EXHAUSTIVE       | parameters are exhaustively generated
+after-failure = SAMPLE_FIRST  | try previously failed sample, then previous seed
+when-fixed-seed = ALLOW       | fixing the random seed is allowed
+edge-cases#mode = MIXIN       | edge cases are mixed in
+edge-cases#total = 0          | # of all combined edge cases
+edge-cases#tried = 0          | # of edge cases tried in current run
+seed = -666131899081790096    | random seed to reproduce generated values
+
+
+timestamp = 2024-04-22T00:28:01.893886700, ClimbingStairsTest:resultEqualsPriorTwo = 
+                              |-----------------------jqwik-----------------------
+tries = 48                    | # of calls to property
+checks = 48                   | # of not rejected calls
+generation = EXHAUSTIVE       | parameters are exhaustively generated
+after-failure = SAMPLE_FIRST  | try previously failed sample, then previous seed
+when-fixed-seed = ALLOW       | fixing the random seed is allowed
+edge-cases#mode = MIXIN       | edge cases are mixed in
+edge-cases#total = 0          | # of all combined edge cases
+edge-cases#tried = 0          | # of edge cases tried in current run
+seed = -1194382895590083714   | random seed to reproduce generated values
+
+
+[INFO] Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.852 s - in zest.ClimbingStairsTest
+[INFO] 
+[INFO] Results:
+[INFO]
+[INFO] Tests run: 7, Failures: 0, Errors: 0, Skipped: 0
