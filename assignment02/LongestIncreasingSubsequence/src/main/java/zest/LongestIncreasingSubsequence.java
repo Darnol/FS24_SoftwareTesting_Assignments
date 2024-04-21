@@ -1,6 +1,9 @@
 package zest;
 
+import javax.management.RuntimeErrorException;
+
 public class LongestIncreasingSubsequence {
+    // Preconditions:
     public int lengthOfLIS(int[] nums) {
         if (nums == null || nums.length == 0) {
             return 0;
@@ -20,6 +23,14 @@ public class LongestIncreasingSubsequence {
             }
 
             maxLength = Math.max(maxLength, dp[i]);
+        }
+        // Postconditions:
+        if (maxLength > nums.length) {
+            throw new RuntimeException("Length of LIS is greater than the number of elements in the array");
+        }
+
+        if (maxLength < 1) {
+            throw new RuntimeException("Length of LIS is less than 1 and input array is not empty");
         }
 
         return maxLength;

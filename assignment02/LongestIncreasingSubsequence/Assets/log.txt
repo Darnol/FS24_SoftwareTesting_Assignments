@@ -1,0 +1,35 @@
+[INFO] -------------------------------------------------------
+[INFO]  T E S T S
+[INFO] -------------------------------------------------------
+[INFO] Running zest.LongestIncreasingSubsequenceTest
+[INFO] Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.116 s - in zest.LongestIncreasingSubsequenceTest
+[INFO] Running zest.LongestIncreasingSubsequenceTest
+timestamp = 2024-04-19T20:25:44.701801100, LongestIncreasingSubsequenceTest:testLengthOfLIS Property = 
+                              |-----------------------jqwik-----------------------
+tries = 1000                  | # of calls to property
+checks = 1000                 | # of not rejected calls
+generation = RANDOMIZED       | parameters are randomly generated
+after-failure = SAMPLE_FIRST  | try previously failed sample, then previous seed
+when-fixed-seed = ALLOW       | fixing the random seed is allowed
+edge-cases#mode = MIXIN       | edge cases are mixed in
+edge-cases#total = 99         | # of all combined edge cases
+edge-cases#tried = 74         | # of edge cases tried in current run
+seed = -1844547632542228466   | random seed to reproduce generated values
+
+
+[INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 1.318 s - in zest.LongestIncreasingSubsequenceTest
+[INFO] 
+[INFO] Results:
+[INFO]
+[INFO] Tests run: 4, Failures: 0, Errors: 0, Skipped: 0
+[INFO]
+[INFO]
+[INFO] --- jacoco:0.8.11:report (report) @ longest-increasing-subsequence ---
+[INFO] Loading execution data file C:\Users\nilsb\Desktop\uni\dev\FS24_SoftwareTesting_Assignments\assignment02\LongestIncreasingSubsequence\target\jacoco.exec
+[INFO] Analyzed bundle 'longest-increasing-subsequence' with 1 classes
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD SUCCESS
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time:  6.094 s
+[INFO] Finished at: 2024-04-19T20:25:45+02:00
+[INFO] ------------------------------------------------------------------------

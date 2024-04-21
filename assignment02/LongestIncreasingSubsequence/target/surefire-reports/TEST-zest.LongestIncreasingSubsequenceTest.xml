@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report-3.0.xsd" version="3.0" name="zest.LongestIncreasingSubsequenceTest" time="0.151" tests="1" errors="0" skipped="0" failures="1">
+<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report-3.0.xsd" version="3.0" name="zest.LongestIncreasingSubsequenceTest" time="1.448" tests="1" errors="0" skipped="0" failures="0">
   <properties>
     <property name="java.specification.version" value="21"/>
     <property name="sun.cpu.isalist" value="amd64"/>
@@ -16,7 +16,7 @@
     <property name="sun.java.launcher" value="SUN_STANDARD"/>
     <property name="user.country" value="GB"/>
     <property name="sun.boot.library.path" value="C:\Program Files\Java\jdk-21\bin"/>
-    <property name="sun.java.command" value="C:\Users\nilsb\AppData\Local\Temp\surefire8504532875499878438\surefirebooter11866154691575246387.jar C:\Users\nilsb\AppData\Local\Temp\surefire8504532875499878438 2024-04-11T12-44-19_944-jvmRun1 surefire7443490037696161023tmp surefire_07198941552282941653tmp"/>
+    <property name="sun.java.command" value="C:\Users\nilsb\AppData\Local\Temp\surefire9724561071058130330\surefirebooter4776411107913079271.jar C:\Users\nilsb\AppData\Local\Temp\surefire9724561071058130330 2024-04-19T20-27-01_263-jvmRun1 surefire10271620202848313189tmp surefire_010545893838205371458tmp"/>
     <property name="jdk.debug" value="release"/>
     <property name="surefire.test.class.path" value="C:\Users\nilsb\Desktop\uni\dev\FS24_SoftwareTesting_Assignments\assignment02\LongestIncreasingSubsequence\target\test-classes;C:\Users\nilsb\Desktop\uni\dev\FS24_SoftwareTesting_Assignments\assignment02\LongestIncreasingSubsequence\target\classes;C:\Users\nilsb\.m2\repository\org\junit\jupiter\junit-jupiter-engine\5.9.1\junit-jupiter-engine-5.9.1.jar;C:\Users\nilsb\.m2\repository\org\junit\platform\junit-platform-engine\1.9.1\junit-platform-engine-1.9.1.jar;C:\Users\nilsb\.m2\repository\org\opentest4j\opentest4j\1.2.0\opentest4j-1.2.0.jar;C:\Users\nilsb\.m2\repository\org\junit\platform\junit-platform-commons\1.9.1\junit-platform-commons-1.9.1.jar;C:\Users\nilsb\.m2\repository\org\junit\jupiter\junit-jupiter-api\5.9.1\junit-jupiter-api-5.9.1.jar;C:\Users\nilsb\.m2\repository\org\apiguardian\apiguardian-api\1.1.2\apiguardian-api-1.1.2.jar;C:\Users\nilsb\.m2\repository\net\jqwik\jqwik\1.8.4\jqwik-1.8.4.jar;C:\Users\nilsb\.m2\repository\net\jqwik\jqwik-api\1.8.4\jqwik-api-1.8.4.jar;C:\Users\nilsb\.m2\repository\net\jqwik\jqwik-web\1.8.4\jqwik-web-1.8.4.jar;C:\Users\nilsb\.m2\repository\net\jqwik\jqwik-time\1.8.4\jqwik-time-1.8.4.jar;C:\Users\nilsb\.m2\repository\net\jqwik\jqwik-engine\1.8.4\jqwik-engine-1.8.4.jar;"/>
     <property name="sun.cpu.endian" value="little"/>
@@ -31,7 +31,7 @@
     <property name="line.separator" value="&#10;"/>
     <property name="java.vm.specification.vendor" value="Oracle Corporation"/>
     <property name="java.specification.name" value="Java Platform API Specification"/>
-    <property name="surefire.real.class.path" value="C:\Users\nilsb\AppData\Local\Temp\surefire8504532875499878438\surefirebooter11866154691575246387.jar"/>
+    <property name="surefire.real.class.path" value="C:\Users\nilsb\AppData\Local\Temp\surefire9724561071058130330\surefirebooter4776411107913079271.jar"/>
     <property name="user.script" value=""/>
     <property name="sun.management.compiler" value="HotSpot 64-Bit Tiered Compilers"/>
     <property name="java.runtime.version" value="21.0.2+13-LTS-58"/>
@@ -60,9 +60,23 @@
     <property name="sun.io.unicode.encoding" value="UnicodeLittle"/>
     <property name="java.class.version" value="65.0"/>
   </properties>
-  <testcase name="testLongestIncreasingSubsequence" classname="zest.LongestIncreasingSubsequenceTest" time="0.105">
-    <failure type="org.opentest4j.AssertionFailedError"><![CDATA[org.opentest4j.AssertionFailedError: expected: <5> but was: <6>
-	at zest.LongestIncreasingSubsequenceTest.testLongestIncreasingSubsequence(LongestIncreasingSubsequenceTest.java:16)
-]]></failure>
+  <testcase name="testLengthOfLIS_EmptyInput_ReturnsZero" classname="zest.LongestIncreasingSubsequenceTest" time="0.093"/>
+  <testcase name="testLengthOfLIS_NullInput_ReturnsZero" classname="zest.LongestIncreasingSubsequenceTest" time="0.003"/>
+  <testcase name="testLengthOfLIS_ValidInput_ReturnsMaxLength" classname="zest.LongestIncreasingSubsequenceTest" time="0.002"/>
+  <testcase name="testLengthOfLIS_Property(Tuple$Tuple2)" classname="zest.LongestIncreasingSubsequenceTest" time="1.412">
+    <system-out><![CDATA[timestamp = 2024-04-19T20:27:05.736840100, LongestIncreasingSubsequenceTest:testLengthOfLIS Property = 
+                              |-----------------------jqwik-----------------------
+tries = 1000                  | # of calls to property
+checks = 1000                 | # of not rejected calls
+generation = RANDOMIZED       | parameters are randomly generated
+after-failure = SAMPLE_FIRST  | try previously failed sample, then previous seed
+when-fixed-seed = ALLOW       | fixing the random seed is allowed
+edge-cases#mode = MIXIN       | edge cases are mixed in
+edge-cases#total = 99         | # of all combined edge cases
+edge-cases#tried = 77         | # of edge cases tried in current run
+seed = 7553368253556053490    | random seed to reproduce generated values
+
+
+]]></system-out>
   </testcase>
 </testsuite>

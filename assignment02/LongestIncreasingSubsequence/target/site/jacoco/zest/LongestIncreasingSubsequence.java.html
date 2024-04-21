@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>LongestIncreasingSubsequence.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">longest-increasing-subsequence</a> &gt; <a href="index.source.html" class="el_package">zest</a> &gt; <span class="el_source">LongestIncreasingSubsequence.java</span></div><h1>LongestIncreasingSubsequence.java</h1><pre class="source lang-java linenums">package zest;
+
+import javax.management.RuntimeErrorException;
+
+<span class="fc" id="L5">public class LongestIncreasingSubsequence {</span>
+    // Preconditions:
+    public int lengthOfLIS(int[] nums) {
+<span class="fc bfc" id="L8" title="All 4 branches covered.">        if (nums == null || nums.length == 0) {</span>
+<span class="fc" id="L9">            return 0;</span>
+        }
+
+<span class="fc" id="L12">        int[] dp = new int[nums.length];</span>
+<span class="fc" id="L13">        int maxLength = 0;</span>
+
+<span class="fc bfc" id="L15" title="All 2 branches covered.">        for (int i = 0; i &lt; nums.length; i++) {</span>
+<span class="fc" id="L16">            dp[i] = 1; // Each element is an increasing subsequence of length 1</span>
+
+            // Check all previous elements to find longer increasing subsequences
+<span class="fc bfc" id="L19" title="All 2 branches covered.">            for (int j = 0; j &lt; i; j++) {</span>
+<span class="fc bfc" id="L20" title="All 2 branches covered.">                if (nums[i] &gt; nums[j]) {</span>
+<span class="fc" id="L21">                    dp[i] = Math.max(dp[i], dp[j] + 1);</span>
+                }
+            }
+
+<span class="fc" id="L25">            maxLength = Math.max(maxLength, dp[i]);</span>
+        }
+        // Postconditions:
+<span class="pc bpc" id="L28" title="1 of 2 branches missed.">        if (maxLength &gt; nums.length) {</span>
+<span class="nc" id="L29">            throw new RuntimeException(&quot;Length of LIS is greater than the number of elements in the array&quot;);</span>
+        }
+
+<span class="pc bpc" id="L32" title="1 of 2 branches missed.">        if (maxLength &lt; 1) {</span>
+<span class="nc" id="L33">            throw new RuntimeException(&quot;Length of LIS is less than 1 and input array is not empty&quot;);</span>
+        }
+
+<span class="fc" id="L36">        return maxLength;</span>
+    }
+}
+
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.11.202310140853</span></div></body></html>
