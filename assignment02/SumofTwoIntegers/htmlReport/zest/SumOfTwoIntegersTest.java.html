@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>SumOfTwoIntegersTest.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">SumOfTwoIntegersTest Coverage Results</a> &gt; <a href="index.source.html" class="el_package">zest</a> &gt; <span class="el_source">SumOfTwoIntegersTest.java</span></div><h1>SumOfTwoIntegersTest.java</h1><pre class="source lang-java linenums">package zest;
+
+import org.junit.jupiter.api.Test;
+import static org.junit.jupiter.api.Assertions.assertEquals;
+
+<span class="fc" id="L6">class SumOfTwoIntegersTest {</span>
+
+<span class="fc" id="L8">    private final SumOfTwoIntegers sumCalc = new SumOfTwoIntegers();</span>
+
+    @Test
+    public void simpleAddition() {
+<span class="fc" id="L12">        assertEquals(2, sumCalc.getSum(1,1));</span>
+<span class="fc" id="L13">        assertEquals(2000, sumCalc.getSum(1000,1000));</span>
+<span class="fc" id="L14">        assertEquals(2000000, sumCalc.getSum(1000000,1000000));</span>
+<span class="fc" id="L15">        assertEquals(2000000000, sumCalc.getSum(1000000000,1000000000));</span>
+<span class="fc" id="L16">    }</span>
+
+    @Test
+    public void negativeAddition() {
+<span class="fc" id="L20">        assertEquals(0, sumCalc.getSum(-1,1));</span>
+<span class="fc" id="L21">        assertEquals(0, sumCalc.getSum(1,-1));</span>
+<span class="fc" id="L22">        assertEquals(1, sumCalc.getSum(-1,2));</span>
+<span class="fc" id="L23">        assertEquals(1, sumCalc.getSum(2,-1));</span>
+<span class="fc" id="L24">        assertEquals(-1, sumCalc.getSum(1,-2));</span>
+<span class="fc" id="L25">        assertEquals(-1, sumCalc.getSum(-2,1));</span>
+<span class="fc" id="L26">    }</span>
+
+    @Test
+    public void zeroAdditions() {
+<span class="fc" id="L30">        assertEquals(1, sumCalc.getSum(0,1));</span>
+<span class="fc" id="L31">        assertEquals(1, sumCalc.getSum(1,0));</span>
+<span class="fc" id="L32">        assertEquals(0, sumCalc.getSum(0,0));</span>
+<span class="fc" id="L33">    }</span>
+
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.10.202304240956</span></div></body></html>
