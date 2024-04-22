@@ -3,8 +3,8 @@
 ## Code Coverage
 
 Some basic tests were implemented that quickly achieved 100% code coverage.
-The code coverage report can be found in root/htmlReport. An additional screenshot and
-the test execution report can be found in the root folder.
+The code coverage report can be found in root/Assets/htmlReport. An additional screenshot and
+the test execution report can be found in the AssetsAss folder.
 
 ## Designing Contracts
 
