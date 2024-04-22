@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>uniquePaths.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">uniquePathsTest Coverage Results</a> &gt; <a href="index.source.html" class="el_package">zest</a> &gt; <span class="el_source">uniquePaths.java</span></div><h1>uniquePaths.java</h1><pre class="source lang-java linenums">package zest;
+
+<span class="fc" id="L3">public class uniquePaths {</span>
+    public int uniquePaths(int m, int n) {
+<span class="fc" id="L5">        int[][] dp = new int[m][n];</span>
+
+        // Initialize the first row and column to 1 since there's only one way to reach any cell in the first row or column
+<span class="fc bfc" id="L8" title="All 2 branches covered.">        for (int i = 0; i &lt; m; i++) {</span>
+<span class="fc" id="L9">            dp[i][0] = 1;</span>
+        }
+<span class="fc bfc" id="L11" title="All 2 branches covered.">        for (int j = 0; j &lt; n; j++) {</span>
+<span class="fc" id="L12">            dp[0][j] = 1;</span>
+        }
+
+        // Fill the DP table
+<span class="fc bfc" id="L16" title="All 2 branches covered.">        for (int i = 1; i &lt; m; i++) {</span>
+<span class="fc bfc" id="L17" title="All 2 branches covered.">            for (int j = 1; j &lt; n; j++) {</span>
+<span class="fc" id="L18">                dp[i][j] = dp[i - 1][j] + dp[i][j - 1]; // The number of paths to the current cell is the sum of the paths to the cell above and to the left</span>
+            }
+        }
+
+<span class="fc" id="L22">        return dp[m - 1][n - 1]; // The bottom-right cell contains the total number of unique paths</span>
+    }
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.10.202304240956</span></div></body></html>
