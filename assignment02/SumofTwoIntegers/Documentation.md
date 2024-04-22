@@ -22,7 +22,7 @@ does not stop if it is not true.
 
 ### Invariants
 No real invariants were identified. Since the function uses a basic type (`int`)
-for the input passing it is automatically passing by reference. An invariant could
+for the input passing it is automatically passing by value. An invariant could
 be that `a+b` should stay constant. It is debatable whether this makes sense to test
 in a function where a sum should be implemented. We need a `+` operation to test it
 and why implement a sum we already have it available for testing reason. The same problem
@@ -43,3 +43,9 @@ Because of the aforementioned points we only write one property that does not ta
 any boundaries in consideration. This implies that the function should work for overflows
 and the property test makes sure it treats overflows the same way as the built-in `+` operator.
 
+In the Assets folder there is a code coverage report after the implemented contracts.
+The coverage now is much lower because of branches that cannot be reached. These branches
+are not to be tested but are rather there for future code changes. Meaning it is not possible
+to trigger them from the outside but rather will be triggered when the code is changed in a 
+problematic manner. Some test are also not necessary but are left in the code for the sake
+of this exercise. Comments explaining are in the code.

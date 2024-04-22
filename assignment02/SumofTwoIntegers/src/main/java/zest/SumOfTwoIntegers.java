@@ -25,7 +25,7 @@ public class SumOfTwoIntegers {
     }
 
     // A function like this is always true.. This is why it would not be necessary
-    public static boolean isValidIntRange(int num) {
+    private static boolean isValidIntRange(int num) {
         return num >= Integer.MIN_VALUE && num <= Integer.MAX_VALUE;
     }
 }

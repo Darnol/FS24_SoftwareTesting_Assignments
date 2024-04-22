@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>SumOfTwoIntegers.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">SumOfTwoIntegersTest Coverage Results</a> &gt; <a href="index.source.html" class="el_package">zest</a> &gt; <span class="el_source">SumOfTwoIntegers.java</span></div><h1>SumOfTwoIntegers.java</h1><pre class="source lang-java linenums">package zest;
+
+<span class="fc" id="L3">public class SumOfTwoIntegers {</span>
+    public int getSum(int a, int b) {
+        // Pre-condition (test could look like that but technically not necessary)
+<span class="pc bpc" id="L6" title="2 of 4 branches missed.">        if (!isValidIntRange(a) || !isValidIntRange(b)) {</span>
+<span class="nc" id="L7">            throw new RuntimeException(&quot;Input variables must be in signed 32-bit integer range&quot;);</span>
+        }
+<span class="fc" id="L9">        final int res = a + b;</span>
+
+<span class="fc bfc" id="L11" title="All 2 branches covered.">        while (b != 0) {</span>
+<span class="fc" id="L12">            int carry = (a &amp; b) &lt;&lt; 1;  // Carry now contains common set bits of a and b</span>
+<span class="fc" id="L13">            a = a ^ b;  // Sum of bits of a and b where at least one of the bits is not set</span>
+<span class="fc" id="L14">            b = carry;  // Carry is shifted by one so that adding it to a gives the required sum</span>
+
+            // Invariant
+<span class="pc bpc" id="L17" title="1 of 2 branches missed.">            assert res == a + b;</span>
+<span class="fc" id="L18">        }</span>
+
+        // Post-condition
+<span class="pc bpc" id="L21" title="1 of 2 branches missed.">        assert res == a;</span>
+        // assert b == 0; (not necessary since loop runs forever if not true)
+
+<span class="fc" id="L24">        return a;</span>
+    }
+
+    // A function like this is always true.. This is why it would not be necessary
+    private static boolean isValidIntRange(int num) {
+<span class="pc bpc" id="L29" title="2 of 4 branches missed.">        return num &gt;= Integer.MIN_VALUE &amp;&amp; num &lt;= Integer.MAX_VALUE;</span>
+    }
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.10.202304240956</span></div></body></html>
