@@ -21,4 +21,6 @@ The result of this task are in the two tests `test_enhancedObservability` and `t
 
 ### Comparison
 I believe that the `ArgumentCaptor` approach is a more elegant way to verify the arguments in this case. The condition to verify is rather simple and the `ArgumentCaptor` is a good way to do this.  
-To enhance the observability of the `EventPublisher` class I had to add quite a lot of code which obfuscates what I'm actually trying to do.
+To enhance the observability of the `EventPublisher` class I had to add quite a lot of code which obfuscates what I'm actually trying to do.  
+
+For test automation, I decided to use jqwik again and generate some Order instances which are then run in tests for both approaches. In terms of automation ease, there is not really a difference between the two approaches once the enhanced observability extra code is written. You can find the tests in the `EventPublisherTest_TaskD` test suite.
