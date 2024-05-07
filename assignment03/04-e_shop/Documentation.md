@@ -20,3 +20,5 @@ The result of this task are in the two tests `test_enhancedObservability` and `t
 
 
 ### Comparison
+I believe that the `ArgumentCaptor` approach is a more elegant way to verify the arguments in this case. The condition to verify is rather simple and the `ArgumentCaptor` is a good way to do this.  
+To enhance the observability of the `EventPublisher` class I had to add quite a lot of code which obfuscates what I'm actually trying to do.
