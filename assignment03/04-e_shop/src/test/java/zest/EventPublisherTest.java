@@ -9,12 +9,6 @@ import static org.junit.jupiter.api.Assertions.*;
 import static org.mockito.Mockito.*;
 
 class EventPublisherTest {
-
-    @Test
-    void test_dummy() {
-        assertTrue(true);
-    }
-
     @Test
     void test_numberOfInvocations() {
 
