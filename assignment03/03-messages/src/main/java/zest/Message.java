@@ -23,4 +23,24 @@ public class  Message {
     public String getContent() {
         return content;
     }
+
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) {
+            return true;
+        }
+        if (obj == null || getClass() != obj.getClass()) {
+            return false;
+        }
+        Message other = (Message) obj;
+        // Check equality of fields
+        return this.sender.equals(other.sender) &&
+                this.receiver.equals(other.receiver) &&
+                this.content.equals(other.content);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(field1, field2);
+    }
 }

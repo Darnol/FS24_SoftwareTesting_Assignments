@@ -3,6 +3,7 @@
 ### First steps
 - I refactored the project structure, created the package `zest` and moved the classes into it.
 - I inject the dependency `MessageService` of the  `MessageProcessor` class via constructor to be effectively able to mock it.
+- For simplicity of comparing ``message`` objects, I added overridden equals and hashCode methods to the Message class.
 
 ### A. Number of invocations
 This is tested in the test `test_numberOfInvocations`. With the mentioned possibility to inject a mock MessageService instance into a real MessageProcessor instance, I can mock the MessageService class and inject it. It is then simple to verify that the sendMessage method is called exactly once.
