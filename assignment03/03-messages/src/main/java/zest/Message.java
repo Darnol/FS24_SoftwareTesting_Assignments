@@ -1,4 +1,6 @@
-public class Message {
+package zest;
+
+public class  Message {
     private String sender;
     private String receiver;
     private String content;
