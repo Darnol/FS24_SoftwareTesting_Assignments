@@ -13,8 +13,10 @@ This is tested in the test `test_numberOfInvocations`. I created a real eventPub
 This is tested with `test_ArgumentCaptor` which verifies the content of the arguments.
 
 ### C. Content of invocations—Increasing observability
-In order to verify the order argument of the function `onOrderPlaced`, I introduced a return value for the function.
-`onOrderPlaced` now returns the input.  
+In order to verify the order argument of the function `onOrderPlaced`, I introduced a `Order` return value for the function.
+`onOrderPlaced` now returns the input. I had to enhance the tests `test_numberOfInvocations` and `test_ArgumentCaptor` with mocked answers in order to simulate correct return values. Furthermore, I expanded the `EventPublisher` class with two methods `verifyOrderInput` and `isOrderOk` to increase the observability of the class.   
+
+The result of this task are in the two tests `test_enhancedObservability` and `test_enhancedObservability_assertFailure`.
 
 
 ### Comparison
