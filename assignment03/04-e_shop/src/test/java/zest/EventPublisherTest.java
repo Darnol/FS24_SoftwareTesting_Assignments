@@ -26,6 +26,10 @@ class EventPublisherTest {
         EventListener emailService = mock(EmailNotificationService.class);
         EventListener inventoryManager = mock(InventoryManager.class);
 
+        // Mock the response of the EventListener dependencies
+        when(emailService.onOrderPlaced(order)).thenReturn(new Order(order.getOrderId(), order.getAmount()));
+        when(inventoryManager.onOrderPlaced(order)).thenReturn(new Order(order.getOrderId(), order.getAmount()));
+
         // Add the two listeners to our eventPublishers
         eventPublisher.subscribe(emailService);
         eventPublisher.subscribe(inventoryManager);
@@ -48,6 +52,10 @@ class EventPublisherTest {
         // Mock the two EventListener dependencies
         EventListener emailService = mock(EmailNotificationService.class);
         EventListener inventoryManager = mock(InventoryManager.class);
+
+        // Mock the response of the EventListener dependencies
+        when(emailService.onOrderPlaced(order)).thenReturn(new Order(order.getOrderId(), order.getAmount()));
+        when(inventoryManager.onOrderPlaced(order)).thenReturn(new Order(order.getOrderId(), order.getAmount()));
 
         // Add the two listeners to our eventPublishers
         eventPublisher.subscribe(emailService);
@@ -78,6 +86,10 @@ class EventPublisherTest {
     @Test
     void test_enhancedObservability() {
 
+        /**
+         * This test is for task C. Content of invocations—Increasing observability
+         */
+
         // a real instance of EventPublisher and Order, no need to mock them
         EventPublisher eventPublisher = new EventPublisher();
         Order order = new Order("firstOrder", 1);
@@ -86,18 +98,53 @@ class EventPublisherTest {
         EventListener emailService = mock(EmailNotificationService.class);
         EventListener inventoryManager = mock(InventoryManager.class);
 
+        // Mock the response of the EventListener dependencies
+        when(emailService.onOrderPlaced(order)).thenReturn(new Order(order.getOrderId(), order.getAmount()));
+        when(inventoryManager.onOrderPlaced(order)).thenReturn(new Order(order.getOrderId(), order.getAmount()));
+
         // Add the two listeners to our eventPublishers
         eventPublisher.subscribe(emailService);
         eventPublisher.subscribe(inventoryManager);
 
         // Call the publish method
-        List<Order> publishedOrders = eventPublisher.publishOrderToAllListeners(order);
+        eventPublisher.publishOrderToAllListeners(order);
 
-        // Verify that the returned order objects from the publisher listeners are correct
-        for (Order o : publishedOrders) {
-            assertEquals(order.getOrderId(), o.getOrderId());
-            assertEquals(order.getAmount(), o.getAmount());
-        }
+        // Verify that the returned order objects did pass the verification, e.g. return the correct order id and amount
+        assertTrue(eventPublisher.isOrderOk());
+
+    }
+
+    @Test
+    void test_enhancedObservability_assertFailure() {
+
+        /**
+         * This test asserts that the mocking and the observability really work by mocking a "false" answer in the
+         * EventListener dependency "emailService"
+         */
+
+        // a real instance of EventPublisher and Order, no need to mock them
+        EventPublisher eventPublisher = new EventPublisher();
+        Order order = new Order("firstOrder", 1);
+
+        // Mock the two EventListener dependencies
+        EventListener emailService = mock(EmailNotificationService.class);
+        EventListener inventoryManager = mock(InventoryManager.class);
+
+        // Mock the response of the EventListener dependencies
+        // ON PURPOSE introduce a "false" order return value in the emailService
+        when(emailService.onOrderPlaced(order)).thenReturn(new Order("falseOrderId", 99));
+        when(inventoryManager.onOrderPlaced(order)).thenReturn(new Order(order.getOrderId(), order.getAmount()));
+
+        // Add the two listeners to our eventPublishers
+        eventPublisher.subscribe(emailService);
+        eventPublisher.subscribe(inventoryManager);
+
+        // Call the publish method
+        eventPublisher.publishOrderToAllListeners(order);
+
+        // Verify that the returned order objects DID NOT pass the verification
+        assertFalse(eventPublisher.isOrderOk());
+
     }
 
 }

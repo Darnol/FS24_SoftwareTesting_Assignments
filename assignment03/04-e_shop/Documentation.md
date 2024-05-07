@@ -13,6 +13,8 @@ This is tested in the test `test_numberOfInvocations`. I created a real eventPub
 This is tested with `test_ArgumentCaptor` which verifies the content of the arguments.
 
 ### C. Content of invocations—Increasing observability
-In order to 
+In order to verify the order argument of the function `onOrderPlaced`, I introduced a return value for the function.
+`onOrderPlaced` now returns the input.  
+
 
 ### Comparison
