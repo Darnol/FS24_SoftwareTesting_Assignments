@@ -5,10 +5,10 @@
 - I inject the dependency `MessageService` of the  `MessageProcessor` class via constructor to be effectively able to mock it.
 
 ### A. Number of invocations
-This is tested in the test `test_numberOfInvocations`. I created a real eventPublisher and order and mocked the two dependencies that inherit from the EventListener interface. Then i publish an order and verify that each service calls the method `onOrderPlaced` exactly once.
+This is tested in the test `test_numberOfInvocations`. With the mentioned possibility to inject a mock MessageService instance into a real MessageProcessor instance, I can mock the MessageService class and inject it. It is then simple to verify that the sendMessage method is called exactly once.
 
 ### B. Content of invocations—ArgumentCaptor
-This is tested with `test_ArgumentCaptor` which verifies the content of the arguments.
+This is tested with `test_ArgumentCaptor`. There I create two captor instances for the two arguments to the sendMessage method. They are used to verify that the passed arguments match the original message.
 
 ### C. Content of invocations—Increasing observability
 In order to verify the order argument of the function `onOrderPlaced`, I introduced a `Order` return value for the function.
