@@ -12,4 +12,16 @@ public class BookManager {
             fetcher.close();
         }
     }
+
+    public List<Book> uniqueAuthors(BookRatingsFetcher fetcher) {
+        try {
+            List<Book> allBooks = fetcher.all();
+            return allBooks.stream()
+                    .map(Book::getAuthor)
+                    .distinct()
+                    .collect(toList());
+        } finally {
+            fetcher.close();
+        }
+    }
 }
