@@ -10,6 +10,7 @@
 ## B
 
 Extended Book with author field and getter
+Changed other tests to recieve author when instantiating object
 Created Method in BookManager
 Created BookAuthorFetcher for this new method.
 

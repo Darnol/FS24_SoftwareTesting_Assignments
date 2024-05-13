@@ -1,3 +1,4 @@
+BookAuthorFetcher.class
 BookManager.class
 BookRatingsFetcher.class
 DatabaseConnection.class
