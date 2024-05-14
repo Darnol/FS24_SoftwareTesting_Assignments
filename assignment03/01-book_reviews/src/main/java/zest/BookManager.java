@@ -13,7 +13,7 @@ public class BookManager {
         }
     }
 
-    public List<String> uniqueAuthors(BookRatingsFetcher fetcher) {
+    public List<String> uniqueAuthors(BookAuthorFetcher fetcher) {
         try {
             List<Book> allBooks = fetcher.all();
             return allBooks.stream()

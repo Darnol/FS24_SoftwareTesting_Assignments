@@ -105,71 +105,21 @@ public class BookReviewsTest {
         }
 
         @Test
-        public void testUniqueAuthorsWhenAllAuthorsAreUnique() {
-            // Create some real books
-            Book book1 = new Book("Book 1", 5, "Author 1");
-            Book book2 = new Book("Book 2", 4, "Author 2");
-            Book book3 = new Book("Book 3", 5, "Author 3");
-
-            // Set up the fetcher to return the mock books
-            when(fetcher.all()).thenReturn(Arrays.asList(book1, book2, book3));
-
-            // Call uniqueAuthors
-            List<String> uniqueAuthors = manager.uniqueAuthors(fetcher);
-
-            // Assert that all authors were returned
-            assertEquals(3, uniqueAuthors.size());
-            assertEquals(Arrays.asList("Author 1", "Author 2", "Author 3"), uniqueAuthors);
-        }
-
-        @Test
-        public void testUniqueAuthorsWhenSomeAuthorsAreNotUnique() {
-            // Create some real books
-            Book book1 = new Book("Book 1", 5, "Author 1");
-            Book book2 = new Book("Book 2", 4, "Author 1");
-            Book book3 = new Book("Book 3", 5, "Author 3");
-
-            // Set up the fetcher to return the mock books
-            when(fetcher.all()).thenReturn(Arrays.asList(book1, book2, book3));
-
-            // Call uniqueAuthors
-            List<String> uniqueAuthors = manager.uniqueAuthors(fetcher);
-
-            // Assert that only unique authors were returned
-            assertEquals(2, uniqueAuthors.size());
-            assertEquals(Arrays.asList("Author 1", "Author 3"), uniqueAuthors);
-        }
-
-        public void testUniqieAuthorsWhenMultipleAreNotUnique() {
-            // Create some real books
-            Book book1 = new Book("Book 1", 5, "Author 1");
-            Book book2 = new Book("Book 2", 4, "Author 1");
-            Book book3 = new Book("Book 3", 5, "Author 1");
-            Book book4 = new Book("Book 4", 5, "Author 2");
-            Book book5 = new Book("Book 5", 4, "Author 2");
-            Book book6 = new Book("Book 6", 5, "Author 3");
-
-            // Set up the fetcher to return the mock books
-            when(fetcher.all()).thenReturn(Arrays.asList(book1, book2, book3));
-
-            // Call uniqueAuthors
-            List<String> uniqueAuthors = manager.uniqueAuthors(fetcher);
-
-            // Assert that only unique authors were returned
-            assertEquals(3, uniqueAuthors.size());
-            assertEquals(Arrays.asList("Author 1", "Author 2", "Author 3"), uniqueAuthors);
-        }
-
-        @Test
-        public void testUniqueAuthorsWhenThereAreNoBooks() {
-            // Set up the fetcher to return no books
-            when(fetcher.all()).thenReturn(Collections.emptyList());
-
-            // Call uniqueAuthors
-            List<String> uniqueAuthors = manager.uniqueAuthors(fetcher);
-
-            // Assert that no authors were returned
-            assertEquals(0, uniqueAuthors.size());
-        }
+        public void testHighRatedBooksWhenOnlyOneBook() {
     
+            // Create some real books
+            Book book1 = new Book("Book 1", 5, "Author 1");
+    
+            // Set up the fetcher to return the mock books
+            when(fetcher.all()).thenReturn(Arrays.asList(book1));
+    
+            List<Book> highRatedBooks = manager.highRatedBooks(fetcher);
+    
+            // Assert that only the high-rated book was returned
+            assertEquals(1, highRatedBooks.size());
+            assertEquals(Arrays.asList(book1), highRatedBooks);
+    
+        }
+
+ 
 }
