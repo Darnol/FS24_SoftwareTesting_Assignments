@@ -37,7 +37,7 @@ public class BookReviewsTest {
         Book book2 = new Book("Book 2", 2, "Author 2");
         Book book3 = new Book("Book 3", 4, "Author 3");
 
-        // Set up the fetcher to return the mock books
+        // Set up the fetcher mock to return the mock books
         when(fetcher.all()).thenReturn(Arrays.asList(book1, book2, book3));
 
         List<Book> highRatedBooks = manager.highRatedBooks(fetcher);
@@ -53,12 +53,10 @@ public class BookReviewsTest {
         @Test
         public void testHighRatedBooksWhenAllBooksAreHighRated() {
     
-            // Create some real books
             Book book1 = new Book("Book 1", 5, "Author 1");
             Book book2 = new Book("Book 2", 4, "Author 2");
             Book book3 = new Book("Book 3", 5, "Author 3");
     
-            // Set up the fetcher to return the mock books
             when(fetcher.all()).thenReturn(Arrays.asList(book1, book2, book3));
     
             List<Book> highRatedBooks = manager.highRatedBooks(fetcher);
@@ -72,12 +70,10 @@ public class BookReviewsTest {
         @Test
         public void testHighRatedBooksWhenNoBooksAreHighRated() {
     
-            // Create some real books
             Book book1 = new Book("Book 1", 3, "Author 1");
             Book book2 = new Book("Book 2", 2, "Author 2");
             Book book3 = new Book("Book 3", 1, "Author 3");
     
-            // Set up the fetcher to return the mock books
             when(fetcher.all()).thenReturn(Arrays.asList(book1, book2, book3));
     
             List<Book> highRatedBooks = manager.highRatedBooks(fetcher);
@@ -85,8 +81,6 @@ public class BookReviewsTest {
             // Assert that no books were returned
             assertEquals(0, highRatedBooks.size());
     
-            // Verify that the fetcher was closed
-            Mockito.verify(fetcher).close();
         }
     
         @Test
@@ -100,22 +94,18 @@ public class BookReviewsTest {
             // Assert that no books were returned
             assertEquals(0, highRatedBooks.size());
     
-            // Verify that the fetcher was closed
-            Mockito.verify(fetcher).close();
         }
 
         @Test
         public void testHighRatedBooksWhenOnlyOneBook() {
     
-            // Create some real books
             Book book1 = new Book("Book 1", 5, "Author 1");
     
-            // Set up the fetcher to return the mock books
             when(fetcher.all()).thenReturn(Arrays.asList(book1));
     
             List<Book> highRatedBooks = manager.highRatedBooks(fetcher);
     
-            // Assert that only the high-rated book was returned
+            // Assert that the high-rated book was returned
             assertEquals(1, highRatedBooks.size());
             assertEquals(Arrays.asList(book1), highRatedBooks);
     

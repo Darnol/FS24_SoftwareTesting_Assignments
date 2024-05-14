@@ -47,4 +47,16 @@ public class CatFactsTest {
         when(httpUtil.get("https://catfact.ninja/facts?limit=1")).thenReturn("{\"data\":[{\"fact\":\"Cats are cute.\", \"length\": 13}]}");
         assertEquals("Cats are cute.", catFactsRetriever.retrieveLongest(1));
     }
+
+    @Test
+    public void testRetrieveLongestZeroFact() throws IOException {
+        when(httpUtil.get("https://catfact.ninja/facts?limit=0")).thenReturn("{\"data\":[{\"fact\":\"Cats are cute.\", \"length\": 13},{\"fact\":\"Cats are very cute.\", \"length\": 18},{\"fact\":\"Cats are extremely cute.\", \"length\": 23}]}");
+        assertEquals("", catFactsRetriever.retrieveLongest(0));
+    }
+
+    @Test
+    public void testRetrieveLongestNegativeFact() throws IOException {
+        when(httpUtil.get("https://catfact.ninja/facts?limit=-1")).thenReturn("{\"data\":[{\"fact\":\"Cats are cute.\", \"length\": 13},{\"fact\":\"Cats are very cute.\", \"length\": 18},{\"fact\":\"Cats are extremely cute.\", \"length\": 23}]}");
+        assertEquals("", catFactsRetriever.retrieveLongest(-1));
+    }
 }

@@ -36,6 +36,10 @@ public class CatFactsRetriever {
      * @return      the longest fact from the list
      */
     public String retrieveLongest(int limit) throws IOException {
+        if (limit < 1) {
+            return "";
+        }
+
         String response = httpUtil.get("https://catfact.ninja/facts?limit=" + String.valueOf(limit));
         JSONArray ja = new JSONObject(response).getJSONArray("data");
 

@@ -17,6 +17,5 @@ I extended the `Book` with an author field and getter. Then created the `uniqueA
 
 3. If there was a change in the `BookAuthorFetcher`, for example it would return an array instead of a list of authors, the tests would not fail, since the mocks still return a list. So if the fetcher was changed, the changes and violations of contracts would have to be carefully considered, also in the test suite. Another problem is is the increased coupling of the method with the tests. Because the fetcher is mocked, I need to know that the `all` method of the fetcher is called and consider this in my tests, so if the implementation of `uniqueAuthors` changed, my tests might have to change aswell, even if the contract stayed the same.
 
-To follow best practices, I gave the test functions very descriptive words. I also 
-Todo, make Creating and closing mock a pre and post test execution.
+To follow best practices, I gave the test functions very descriptive names. I also made the creation of the mocks and object and verification of the `close`method a before each and after each. This adheres to DRY and also ensures, that the tests are encapsulated with the objects and mocks being independently created for each test. I wrote comments for the asserts to describe what exactly they are trying to check. For the first test I wrote more detailed comments to describe the structure of the tests.
 
