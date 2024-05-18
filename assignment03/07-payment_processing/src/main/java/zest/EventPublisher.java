@@ -10,9 +10,10 @@ public class EventPublisher {
         listeners.add(listener);
     }
 
-    public void publishTransactionComplete(Transaction transaction) {
+    public Transaction publishTransactionComplete(Transaction transaction) {
         for (AuditService listener : listeners) {
             listener.onTransactionComplete(transaction);
         }
+        return transaction;
     }
 }

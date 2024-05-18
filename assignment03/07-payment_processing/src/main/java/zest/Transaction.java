@@ -1,4 +1,4 @@
 package zest;
 
-public class Transaction {
+public interface Transaction {
 }
