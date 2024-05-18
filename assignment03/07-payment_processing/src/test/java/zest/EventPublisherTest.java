@@ -114,8 +114,7 @@ public class EventPublisherTest {
 
         paymentProcessor.processPayment(transaction);
 
-        auditService1.onTransactionComplete(transactionCaptor.capture());
-
+        verify(auditService1, times(1)).onTransactionComplete(transactionCaptor.capture());
         assertEquals(transaction, transactionCaptor.getAllValues().get(0));
     }
 
