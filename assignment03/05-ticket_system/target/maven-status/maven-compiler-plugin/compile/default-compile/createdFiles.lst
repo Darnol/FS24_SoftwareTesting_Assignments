@@ -1,0 +1,6 @@
+zest\TicketRepository.class
+zest\NotificationService.class
+zest\Ticket.class
+zest\LogService.class
+zest\TicketManager.class
+zest\TicketPriority.class
