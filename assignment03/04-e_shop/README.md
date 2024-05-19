@@ -1,11 +1,11 @@
 # E-shop
 An e-shop website invokes two actions after an order is placed. First, it updates the inventory database, since the
-bought items may not be available for other orders anymore (this is implemented through the `InventoryManager` class);
+bought items may not be available for other orders anymore (this is implemented through the `zest.InventoryManager` class);
 second, it notifies the buyer by emailing them (this is implemented through the `EmailNotificationService` class).
-Both of these classes inherit from the `EventListener` interface that has an `onOrderPlaced` method, which is invoked after an order is placed. For this invocation to happen, these classes have to subscribe to the `EventPublisher` class, which is in turn responsible for invoking the `onOrderPlaced` method of each listener.
+Both of these classes inherit from the `EventListener` interface that has an `onOrderPlaced` method, which is invoked after an order is placed. For this invocation to happen, these classes have to subscribe to the `zest.EventPublisher` class, which is in turn responsible for invoking the `onOrderPlaced` method of each listener.
 Click [here](https://en.wikipedia.org/wiki/Observer_pattern) if you want to learn more about the *Observer* pattern (not mandatory for the assignment).
 
-Write *unit tests* for the method `publishOrderPlaced` of the `EventPublisher` class using test doubles instead of the actual implementations of the email notification service and the inventory manager, after refactoring the code accordingly if needed.
+Write *unit tests* for the method `publishOrderPlaced` of the `zest.EventPublisher` class using test doubles instead of the actual implementations of the email notification service and the inventory manager, after refactoring the code accordingly if needed.
 Specifically, implement tests the cover the following scenarios:
 
 ### A. Number of invocations
