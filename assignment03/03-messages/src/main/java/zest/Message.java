@@ -1,5 +1,7 @@
 package zest;
 
+import java.util.Objects;
+
 public class  Message {
     private String sender;
     private String receiver;
@@ -41,6 +43,6 @@ public class  Message {
 
     @Override
     public int hashCode() {
-        return Objects.hash(field1, field2);
+        return Objects.hash(this.sender, this.receiver, this.content);
     }
 }

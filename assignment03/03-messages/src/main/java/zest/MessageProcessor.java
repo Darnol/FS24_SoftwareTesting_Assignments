@@ -13,9 +13,9 @@ public class MessageProcessor {
     private void verifyMessages(List<Message> messages) {
         // verify that all messages are equal in both lists
         for (Message message : messages) {
-            TODO
+//            TODO
         }
-        return
+//        return
     }
 
     public MessageProcessor(MessageService messageService) {

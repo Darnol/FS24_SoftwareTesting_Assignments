@@ -25,6 +25,7 @@
         <module name="merge-k-sorted-lists" />
         <module name="SumofTwoIntegers" />
         <module name="longest-increasing-subsequence" />
+        <module name="messages" />
         <module name="needle-in-hay" />
       </profile>
     </annotationProcessing>
