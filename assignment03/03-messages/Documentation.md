@@ -18,6 +18,7 @@ The resulting test is `test_increasingObservability`.
 
 
 ### Comparison
-In this exercise, I liked the way of increasing the observability more instead of the Argument Captor approach. It felt to me very natural to extend the `MessageProcessor` with a verification function, and it did not generate a lot of new code. The test then definitely looks simpler than the Argument Captor approach which has to introduce those new captor classes.
+In this exercise, I liked the way of increasing the observability more instead of the Argument Captor approach. It felt to me very natural to extend the `MessageProcessor` with a verification function, and it did not generate a lot of new code. The test
+then definitely looks simpler than the Argument Captor approach which has to introduce those new captor classes.  
 
-For test automation, I decided to use jqwik again and generate some Order instances which are then run in tests for both approaches. In terms of automation ease, there is not really a difference between the two approaches once the enhanced observability extra code is written. You can find the tests in the `EventPublisherTest_TaskD` test suite.
+For test automation, I decided to use jqwik again and generate some Message instances which are then run in tests for both approaches. Those new tests are moved to a separate file `MessageProcessorTest_TaskD`. There are no specifications in the description for the `Message` class that help me figure out any edge cases or conditions that need special attention. Hence, I generated some inputs, but only with valid string instances for all the fields of the `Message` class.
