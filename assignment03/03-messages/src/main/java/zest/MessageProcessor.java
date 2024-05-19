@@ -5,17 +5,24 @@ import java.util.List;
 
 public class MessageProcessor {
 
-    private MessageService messageService;
+    private final MessageService messageService;
 
     // Task C - Save inserted arguments to the sendMessage method
-    private List<Message> messagesToCheck;
-    private boolean messagesOk = false;
+    private List<Message> messagesToCheck = new ArrayList<>();
+    public boolean messagesOk = false;
     private void verifyMessages(List<Message> messages) {
         // verify that all messages are equal in both lists
         for (Message message : messages) {
-//            TODO
+
+//            System.out.println("Processing message with content: " + message.getContent());
+
+            if (!(messagesToCheck.contains(message))) {
+                messagesOk = false;
+                return;
+            }
         }
-//        return
+        // if we went through and all messages were found, we have checked the messages
+        messagesOk = true;
     }
 
     public MessageProcessor(MessageService messageService) {
@@ -34,7 +41,12 @@ public class MessageProcessor {
             messagesToCheck.add(new Message(message.getSender(), message.getReceiver(), message.getContent()));
         }
 
-        verifyMessages(messages);
+//        System.out.println("Current messages contents saved to check: ");
+//        messagesToCheck.forEach((m -> System.out.println(m.getContent())));
 
+        // verify the integrity of the messages we received
+        verifyMessages(messages);
+        // After verifying, reset the list of saved messages, ready for the next processMessages
+        messagesToCheck = new ArrayList<>();
     }
 }

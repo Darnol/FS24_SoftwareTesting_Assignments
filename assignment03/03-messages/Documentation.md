@@ -12,14 +12,12 @@ This is tested in the test `test_numberOfInvocations`. With the mentioned possib
 This is tested with `test_ArgumentCaptor`. There I create two captor instances for the two arguments to the sendMessage method. They are used to verify that the passed arguments match the original message.
 
 ### C. Content of invocations—Increasing observability
-In order to verify the order argument of the function `onOrderPlaced`, I introduced a `Order` return value for the function.
-`onOrderPlaced` now returns the input. I had to enhance the tests `test_numberOfInvocations` and `test_ArgumentCaptor` with mocked answers in order to simulate correct return values. Furthermore, I expanded the `EventPublisher` class with two methods `verifyOrderInput` and `isOrderOk` to increase the observability of the class.   
+In order to verify the arguments of the function `processMessages`, I introduced a private function `verifyMessages` in the `MessageProcessor` class which compares the input to the `processMessages` to the element that were actually put into the `sendMessage` function. The class then contains a boolean field which contains true if the content was verified correctly.  
+The resulting test is `test_increasingObservability`.
 
-The result of this task are in the two tests `test_enhancedObservability` and `test_enhancedObservability_assertFailure`.
 
 
 ### Comparison
-I believe that the `ArgumentCaptor` approach is a more elegant way to verify the arguments in this case. The condition to verify is rather simple and the `ArgumentCaptor` is a good way to do this.  
-To enhance the observability of the `EventPublisher` class I had to add quite a lot of code which obfuscates what I'm actually trying to do.  
+In this exercise, I liked the way of increasing the observability more instead of the Argument Captor approach. It felt to me very natural to extend the `MessageProcessor` with a verification function, and it did not generate a lot of new code. The test then definitely looks simpler than the Argument Captor approach which has to introduce those new captor classes.
 
 For test automation, I decided to use jqwik again and generate some Order instances which are then run in tests for both approaches. In terms of automation ease, there is not really a difference between the two approaches once the enhanced observability extra code is written. You can find the tests in the `EventPublisherTest_TaskD` test suite.

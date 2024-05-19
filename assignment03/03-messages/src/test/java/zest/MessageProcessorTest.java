@@ -67,4 +67,28 @@ class MessageProcessorTest {
 
     }
 
+    @Test
+    void test_increasingObservability() {
+        // Create a mock instance of MessageService
+        MessageService messageService = mock(MessageService.class);
+
+        // Create a real messageProcessor instance, inject the mock
+        MessageProcessor messageProcessor = new MessageProcessor(messageService);
+
+        // Create a list of message instances
+        Message m1 = new Message("sender1", "receiver1", "content1");
+        Message m2 = new Message("sender2", "receiver2", "content2");
+        List<Message> messages = Arrays.asList(
+                m1,
+                m2
+        );
+
+        // Process the messages
+        messageProcessor.processMessages(messages);
+
+        // Verify the status of the messages we went through the messageProcessor class
+        assertTrue(messageProcessor.messagesOk);
+
+    }
+
 }
