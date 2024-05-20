@@ -1,3 +1,5 @@
+package zest;
+
 public class MovieStreamingManager {
     private FileStreamService fileStreamService;
     private CacheService cacheService;
@@ -21,4 +23,7 @@ public class MovieStreamingManager {
     }
 
     // Additional methods can be added here for other functionalities
+    public void updateMovieMetadata(String movieId, MovieMetadata metadata){
+        fileStreamService.updateMetadata(movieId, metadata);
+    }
 }

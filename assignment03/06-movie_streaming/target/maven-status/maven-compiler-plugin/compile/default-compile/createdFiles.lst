@@ -1,0 +1,5 @@
+zest\MovieMetadata.class
+zest\StreamingDetails.class
+zest\CacheService.class
+zest\MovieStreamingManager.class
+zest\FileStreamService.class
