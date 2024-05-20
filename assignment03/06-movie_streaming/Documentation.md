@@ -1,6 +1,6 @@
 # Movie Streaming:
 
-### **MovieStreamingManager** class
+### Unit Tests for the Methods in MovieStreamingManager Class
 The MovieStreamingManager class has one method `streamMovie()` which takes only an id. It also requires a FileStreamService instance and a CacheService instance. Both of these are injected into the MovieStreamingManager class and can be mocked. However, as mocking has its disadvantages, it is important to choose when and what to mock.
 
 1. Both FileStreamService and CacheService are external dependencies that need to be mocked. When `streamMovie()` is examined, it can be seen that the method works on a cache-hit or cache-miss basis. To make sure the MovieStreamingManager interacts with the services correctly, one test case with cache-hit and one test case with cache-miss were created.
