@@ -16,4 +16,6 @@ Because of these points, test cases were implemented with Java's Mockito framewo
 3. As per assignment directions, 3 test cases with simulated failures in external dependencies were added to the test suite to ensure the behavior of the `createTicket()` method under these circumstances. The results were as expected, and the tests all passed. Results of the tests can be found in the Assets folder.
 
 ## Some Notes
+I changed the project structure, created `zest` package, and created a separate folder for tests.
+
 Tests were written in a manner that prevents flakiness as much as possible. A `setUp()` method was used to ensure each test would have clean, reliable resources to use. The test suite is fast and the tests are cohesive, independent and isolated.
