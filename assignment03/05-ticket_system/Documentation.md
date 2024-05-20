@@ -1,6 +1,6 @@
 # Ticket System:
 
-## Unit Tests for the createTicket Method
+### Unit Tests for the createTicket Method
 `createTicket()` method of TicketManager class takes a ticket object, logs the ticket creation action via LogService, sends a notification to the customer via NotificationService, and saves the ticket to the database via TicketRepository. The ticket object needs a customer email, an issue description and ticket priority (normal or urgent). NotificationService, LogService and TicketRepository are injected into the TicketManager class and can be mocked. However, as mocking has its disadvantages, it is important to choose when and what to mock.
 
 - NotificationService: This service is responsible for sending notifications to customers. It's an external dependency, and its behavior and state should not impact the tests for TicketManager. Mocking this service allows us to simulate notifications without actually sending them.
